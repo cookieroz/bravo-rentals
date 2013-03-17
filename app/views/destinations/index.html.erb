@@ -1,0 +1,94 @@
+<% provide(:title, "Destinations") %>
+
+<div class="dest-index">
+  <div class="row">
+    <div class="span2">
+      <form class="destination-index-form">
+        <fieldset>
+          <legend>Filter your search</legend>
+          <label>Location:</label>
+          <select>
+            <% @destinations.each do |destination| %>
+                <option><%= destination.name  %></option>
+            <% end %>
+          </select>
+          <label>Features:</label>
+          <label class="checkbox">
+            <input type="checkbox"> Private Pool
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> Air Conditioning
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> Satellite TV
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> Internet
+          </label>
+          <label>Price:</label>
+          <label class="checkbox">
+            <input type="checkbox"> - 500&euro;
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> 500&euro; - 1.000&euro;
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> 1.000&euro; - 1.500&euro;
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> + 1.500&euro;
+          </label>
+          <div class="center">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="span10">
+      <% @destinations.each do |destination| %>
+          <div class="row">
+            <p class="lead span10"><%= link_to destination.name, destination  %></p>
+            <div class="span7">
+              <% unless destination.dest_image.nil? %>
+                  <%= link_to image_tag(destination.dest_image.url), destination %>
+              <% end %>
+            </div>
+            <div class="span3 zebra-index no-left-margin">
+              <p><%= raw truncate(strip_tags(destination.content), :length => 200) %></p>
+              <%= link_to 'Show', destination %> |
+              <%= link_to 'Edit', edit_destination_path(destination) %> |
+              <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+          <div class="span10 no-left-margin">
+            <h5>Featured Vacation Rentals in <%= link_to destination.name, destination  %></h5>
+            <ul class="thumbnails">
+              <% destination.rentals.each do |rental| %>
+                  <li class="span2 zebra">
+                    <div class="thumbnail">
+                      <% unless rental.photos.first.nil? %>
+                          <%= link_to image_tag(rental.photos.first.url), rental %>
+                      <% end %>
+                      <p><%= link_to rental.name, rental %></p>
+                      <div class="destination-show-link">
+                        <ul class="unstyled">
+                          <li>Sleeps: <%= rental.sleeps %></li>
+                          <li>Bedrooms: <%= rental.bedrooms %></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<% if current_user %>
+    <%= link_to 'New Destination', new_destination_path,
+                class: 'btn btn-warning btn-large' %>
+<% end %>

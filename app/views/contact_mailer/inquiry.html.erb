@@ -1,0 +1,15 @@
+<p>New Inquiry From BVR</p>
+
+<ul>
+  <li><b>Name:</b> <%= @message.name %></li>
+  <li><b>Email:</b> <%= @message.email %></li>
+  <li><b>Message:</b> <%= @message.content %></li>
+  <li><b>Tlf:</b> <%= @message.tlf %></li>
+  <li><b>Dates:</b> <%= @message.dates %></li>
+  <li><b>Adults:</b> <%= @message.adults %></li>
+  <li><b>Kids:</b> <%= @message.kids %></li>
+  <li><b>Property name:</b> <%= @message.property_name %> (only shown if sent from a
+    Rental property)</li>
+</ul>
+
+<p><%=link_to "Bravo Vacation Rentals", root_path %>

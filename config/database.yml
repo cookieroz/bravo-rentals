@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: rental_dev
+  database: bravo_rental_dev
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -13,10 +13,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: postgresql
-  database: rental_test
+  database: bravo_rental_test
   host: localhost
 
 production:
   adapter: postgresql
-  database: rental_prod
+  database: bravo_rental_prod
   host: localhost

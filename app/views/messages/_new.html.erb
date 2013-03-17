@@ -1,0 +1,15 @@
+<%= simple_form_for  @message,
+                     :html => { :class => 'form-horizontal contact-form' } do |f| %>
+    <h3>Contact Us</h3>
+    <%= f.error_notification %>
+    <%= f.input :name %>
+    <%= f.input :nickname, :wrapper_html => { :class => 'nickname' } %>
+    <%= f.input :tlf %>
+    <%= f.input :email %>
+    <%= f.input :content, :as => :text, :input_html => { :rows => 5 } %>
+    <%#= f.input :property_name, :input_html => { :value => "#{@rental.name}" },
+                  :wrapper_html => { :class => 'nickname' } %>
+    <div class="actions center">
+      <%= f.submit "Contact", class: "btn btn-info" %>
+    </div>
+<% end %>

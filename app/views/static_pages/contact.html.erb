@@ -1,0 +1,45 @@
+<% provide(:title, "Contact Us") %>
+
+<div class="row contact-us">
+  <div class="span9">
+    <div class="span4 contact-mobile">
+      <%= image_tag('phone.jpg') %>
+    </div>
+    <div class="span5 contact-us-form">
+        <%= render 'messages/new' %>
+    </div>
+    <div class="clear"></div>
+    <div class="socialmedia">
+      <h3>Find us on</h3>
+      <div class="social-box">
+        youtube, social media
+      </div>
+    </div>
+    <div class="faq-contact">
+      <p>FAQ</p>
+    </div>
+  </div>
+  <div class="span3 no-left-margin">
+    <div class="owner-contact">
+      <p class="lead center">Are you an Owner?</p>
+      <hr />
+      <%= link_to(image_tag('key.jpg')) %>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt explicabo.
+      </p>
+      <%= link_to "Find out more", "#", class: "btn btn-warning" %>
+    </div>
+    <div class="bcard-contact">
+      <p class="lead center">How to become an agent?</p>
+      <hr />
+      <%= link_to(image_tag('card.jpg')) %>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+        architecto beatae vitae dicta sunt explicabo.
+      </p>
+    </div>
+  </div>
+</div>

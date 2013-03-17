@@ -26,6 +26,7 @@ BravoRentals::Application.configure do
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+    config.action_dispatch.x_sendfile_header = nil # for heroku
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -49,7 +50,18 @@ BravoRentals::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :smtp
+
+    ActionMailer::Base.smtp_settings = {
+        :address  => "smtp.gmail.com",
+        :port  => 587,
+        :domain => "gmail.com",
+        :user_name  => "cookieroz@gmail.com",
+        :password  => "hoeroz12",
+        :authentication  => "plain",
+        :enable_starttls_auto => true
+    }
 
   # Enable threaded mode
   # config.threadsafe!

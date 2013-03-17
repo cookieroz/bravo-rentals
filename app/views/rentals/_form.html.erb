@@ -1,0 +1,27 @@
+<%= simple_form_for(@rental) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.hidden_field :photo_ids, value: "" %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.association :destination %>
+      <%= f.input :sleeps %>
+      <%= f.input :bedrooms %>
+      <%= f.input :bathrooms %>
+      <%= f.input :content, :as => :ckeditor,
+                  :input_html => { :toolbar => 'Full' } %>
+      <%= f.input :rates, :as => :ckeditor,
+                  :input_html => { :toolbar => 'Full' } %>
+      <%= f.input :observations, :as => :ckeditor,
+                  :input_html => { :toolbar => 'Full' }%>
+      <%= f.input :latitude %>
+      <%= f.input :longitude %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>
+
+<%= render "shared/fileupload" %>

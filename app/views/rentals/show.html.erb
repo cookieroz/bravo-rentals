@@ -1,0 +1,94 @@
+<% provide(:title, @rental.name) %>
+
+<% if current_user %>
+    <%= link_to("Edit", edit_rental_path(@rental), class: 'btn btn-primary') %> |
+    <%= link_to("Back", rentals_path, class: 'btn') %>
+<% end %>
+
+<div class="villa-show">
+  <div class="row">
+    <div class="span12">
+      <%= render_breadcrumbs %>
+      <div id="rental-slideshow" class="pics">
+        <%# Photo.where(imageable_type: "TopPhoto").each do |photo| %>
+        <%#= link_to(image_tag(photo.url, alt: photo.caption), root_url+"#{photo.photo_link}") %>
+        <%# end %>
+        <% @rental.photos.each do |photo| %>
+            <% unless photo.image.nil? %>
+                <%= link_to(image_tag(photo.url), "#") %>
+            <% end %>
+        <% end %>
+        <a>
+          <img src="http://grandesvillas.com/uploads/photo/image/895/villanewmodernstyleforrent.jpg">
+        </a>
+        <a>
+          <img src="http://grandesvillas.com/uploads/photo/image/894/stunningseaviewsvilla.jpg">
+        </a>
+      </div>
+      <div id="banner">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span9">
+      <div class="villa-blue-box">
+        <p>
+          <strong>Sleeps:</strong> <%= @rental.sleeps %> &nbsp; &nbsp;
+          <strong>Bedrooms:</strong> <%= @rental.bedrooms %> &nbsp; &nbsp;
+          <strong>Bathrooms:</strong> <%= @rental.bathrooms %> &nbsp; &nbsp;
+          <strong>Location:</strong> <%= @rental.destination_id %> &nbsp; &nbsp;
+        </p>
+        blue box
+      </div>
+      <div class="villa-description">
+        <p class="lead">Description Luxury Villa in <%= @rental.destination_id %> </p>
+        <%= raw @rental.content %>
+      </div>
+      <div class="villa-gray-box">
+        <p class="lead">Villa Weekly Rates for <%= @rental.name %>: </p>
+        <%= raw @rental.rates %>
+      </div>
+      <div class="villa-gray-box">
+        <p class="lead font14">Observations: </p>
+        <%= raw @rental.observations %>
+      </div>
+    </div>
+    <div class="span3">
+      <div class="contact-villa-form">
+        <h3>Ask about this rental </h3>
+        <%= simple_form_for  @message,
+                             :html => { :class => 'form-horizontal contact-form' } do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :name %>
+            <%= f.input :nickname, :wrapper_html => { :class => 'nickname' } %>
+            <%= f.input :tlf, label: 'Phone' %>
+            <%= f.input :email %>
+            <%= f.input :dates %>
+            <%= f.input :adults %>
+            <%= f.input :kids, label: 'Children' %>
+            <%= f.input :content, label: 'Message', :as => :text, :input_html => { :rows => 5 } %>
+            <%#= f.input :property_name, :input_html => { :value => "#{@rental.name}" },
+                  :wrapper_html => { :class => 'nickname' } %>
+            <div class="actions center">
+              <%= f.submit "Ask", class: "btn btn-info" %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <p class="lead padtop15">Location of <%= @rental.name %>:</p>
+  <%= gmaps(
+              :markers => { :data => @json },
+              :map_options => { :auto_adjust => true, # :auto_adjust map to center on location
+                                :auto_zoom => false, 	# :auto_zoom defaults to full zoom in, set to false to utilize :zoom
+                                :zoom => 15 }		# :zoom 0 is fully zoomed out (world view), 21 is fully zoomed in (street view)
+      ) %>
+
+  <% if current_user %>
+      <%= link_to 'Edit', edit_rental_path(@rental) %> |
+  <% end %>
+  <%= link_to 'Back', rentals_path %>
+</div>
+
+<%= yield :scripts %>

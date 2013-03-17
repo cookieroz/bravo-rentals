@@ -1,0 +1,8 @@
+<%= form_tag( search_path, :method => "get", class: "form-search pull-right" ) do %>
+    <div class="input-append">
+      <%= text_field_tag :q, params[:q], placeholder: "Ref. number or Villa name" %>
+        <button type="submit" class="add-on">
+          <i class="icon-search"></i>
+        </button>
+    </div>
+<% end %>

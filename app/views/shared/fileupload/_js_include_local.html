@@ -1,0 +1,97 @@
+<script>
+    $(function () {
+        'use strict';
+
+        // Initialize the jQuery File Upload widget:
+        $('#fileupload').fileupload().bind('fileuploaddone', function (e, data) {
+            // Store uploaded photo id's in a hidden input,
+            // then the id's will be used to build rental-photo relationships
+            var pid = data.result["files"][0].id;
+            var val = $("#rental_photo_ids").val();
+            var new_val = "";
+
+            if(val.length > 0){
+                new_val = val.concat(',').concat(pid.toString());
+            }else{
+                new_val = pid.toString();
+            }
+            $("#rental_photo_ids").val(new_val);
+        }).bind('fileuploadcompleted', function (e, data) {
+            $.post($('.files', this).data('update-url'), $('.files', this).sortable('serialize'))
+        });
+
+        $(".files").sortable({
+            items: 'tr',
+            axis: 'y',
+            update: function(){
+              $.post($(this).data('update-url'), $(this).sortable('serialize'))
+            }
+        });
+
+
+        // Enable iframe cross-domain access via redirect option:
+        $('#fileupload').fileupload(
+                'option',
+                'redirect',
+                window.location.href.replace(
+                        /\/[^\/]*$/,
+                        '/cors/result.html?%s'
+                )
+        );
+
+        $('#fileupload').fileupload('option', {
+            maxFileSize:10000000,
+            acceptFileTypes:/(\.|\/)(gif|jpe?g|png)$/i,
+            sequentialUploads:true,
+            process:[
+                {
+                    action:'load',
+                    fileTypes:/^image\/(gif|jpeg|png)$/,
+                    maxFileSize:20000000 // 20MB
+                },
+                {
+                    action:'resize',
+                    maxWidth:2048,
+                    maxHeight:2048
+                },
+                {
+                    action:'save'
+                }
+            ]
+        });
+
+        //if ($.support.cors) {
+            //$.ajax({
+                //url:'//jquery-file-upload.appspot.com/',
+                //type:'HEAD'
+            //}).fail(function () {
+                        //$('<span class="alert alert-error"/>')
+                                //.text('Upload server currently unavailable - ' +
+                                //new Date())
+                                //.appendTo('#fileupload');
+                    //});
+        //}
+
+
+        $.getJSON($('#fileupload').prop('action')+'?rental_id=<%= @rental.id %>', function (files) {
+          var fu = $('#fileupload').data('blueimpFileupload'), template;
+          fu._adjustMaxNumberOfFiles(-files.length);
+          var f = []
+          $.each(files, function(index, file){
+            f.push(file["files"][0])
+          })
+          template = fu._renderDownload(f)
+            .appendTo($('#fileupload .files'));
+          // Force reflow:
+          fu._reflow = fu._transition && template.length &&
+            template[0].offsetWidth;
+          template.addClass('in');
+          $('#loading').remove();
+        });
+
+
+    });
+
+</script>
+<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+<!--[if gte IE 8]><script src="/javascripts/jquery-file-upload/js/cors/jquery.xdr-transport.js"></script><![endif]-->
