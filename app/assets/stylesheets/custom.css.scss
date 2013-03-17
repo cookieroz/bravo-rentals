@@ -334,12 +334,17 @@ header {
       }
     }
   }
-
   .span7 img {
     height: 200px;
     width: 700px;
   }
-
+  .destination-show-link {
+    p.features-destinations {
+      clear: both;
+      font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
+      padding: 0 5px;
+    }
+  }
   .zebra-index {
     background: #000000;
     color: #ffffff;
@@ -419,6 +424,9 @@ header {
     background: $villaBgBlue;
     margin-top: 13px;
     padding: 10px;
+    .features-list {
+      margin-bottom: 0;
+    }
   }
   .villa-description {
     margin: 15px 0 15px 0;

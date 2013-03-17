@@ -36,16 +36,23 @@
           <strong>Sleeps:</strong> <%= @rental.sleeps %> &nbsp; &nbsp;
           <strong>Bedrooms:</strong> <%= @rental.bedrooms %> &nbsp; &nbsp;
           <strong>Bathrooms:</strong> <%= @rental.bathrooms %> &nbsp; &nbsp;
-          <strong>Location:</strong> <%= @rental.destination_id %> &nbsp; &nbsp;
+          <strong>Location:</strong> <%= @rental.destination.name %> &nbsp; &nbsp;
         </p>
-        blue box
+        <p class="features-list"><strong>Vacation Rental Features:</strong></p>
+        <p> |
+          <% @rental.features.each do |feature| %>
+            <% unless feature.name.blank? %>
+              <%= feature.name %> |
+            <% end %>
+          <% end %>
+        </p>
       </div>
       <div class="villa-description">
-        <p class="lead">Description Luxury Villa in <%= @rental.destination_id %> </p>
+        <p class="lead">Description Luxury Vacation Rental in <%= @rental.destination.name %> </p>
         <%= raw @rental.content %>
       </div>
       <div class="villa-gray-box">
-        <p class="lead">Villa Weekly Rates for <%= @rental.name %>: </p>
+        <p class="lead">Vacation Rental Weekly Rates: </p>
         <%= raw @rental.rates %>
       </div>
       <div class="villa-gray-box">

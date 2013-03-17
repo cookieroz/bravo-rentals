@@ -17,6 +17,24 @@
                   :input_html => { :toolbar => 'Full' }%>
       <%= f.input :latitude %>
       <%= f.input :longitude %>
+
+      <!--Refactor into a partial -->
+      <div class="control-group">
+        <h3>Rental Features</h3>
+        <div class="controls">
+          <%= hidden_field_tag "rental[feature_ids][]", nil%>
+          <% Feature.all.each do |feature| %>
+              <div class="cat-text-field">
+                <%= check_box_tag "rental[feature_ids][]",
+                                  feature.id,
+                                  @rental.feature_ids.include?(feature.id),
+                                  id: dom_id(feature)%>
+                <%= text_field_tag dom_id(feature), feature.name, class: "cat-check" %>
+              </div>
+          <% end %>
+          <%= link_to_add_fields "Add a Feature", f, :features %>
+        </div>
+      </div>
     </div>
 
     <div class="form-actions">
