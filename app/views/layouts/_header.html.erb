@@ -20,16 +20,16 @@
         <%= link_to("destinations", destinations_path, class:"#{'active' if current_page?(destinations_path)}") %>
       </li>
       <li class="divider-vertical"></li>
-      <li class="<%#= 'active' if current_page?(villas_path) %>">
-        <%= link_to("about", "#") %>
+      <li>
+        <%= link_to("about", about_path, class:"#{'active' if current_page?(about_path)}") %>
       </li>
       <li class="divider-vertical"></li>
-      <li class="<%#= 'active' if current_page?(destinations_path) %>">
+      <li>
       <li><%= link_to("contact", contact_path, class:"#{'active' if current_page?(contact_path)}") %></li>
       </li>
       <li class="divider-vertical"></li>
-      <li class="<%#= 'active' if current_page?(services_path) %>">
-        <%= link_to("owners", "#") %>
+      <li>
+        <%= link_to("owners", owners_path, class:"#{'active' if current_page?(owners_path)}") %>
       </li>
     </ul>
   </nav>

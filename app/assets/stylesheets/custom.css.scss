@@ -592,6 +592,23 @@ header {
 }
 
 
+/* Owners Page */
+.owner-header {
+  border-bottom: 2px solid #000000;
+  h1 {
+    font-weight: lighter;
+  }
+}
+.owners {
+  .span9 {
+    .faq-owners {
+      color: $bvrBlue;
+      font-size: 1.1em;
+    }
+  }
+}
+
+
 
 /* footer */
 #push {
