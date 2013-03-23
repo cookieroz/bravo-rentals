@@ -11,8 +11,10 @@ BravoRentals::Application.routes.draw do
 
   resources :rentals do
     collection { post :sort_photos }
-    # collection { post :search, to: 'villas#index' }
+    collection { post :search, to: 'rentals#index' }
   end
+  match '/rentals/in/(:destination_name)-(:sleeps)-(:bedrooms)',
+        to: 'rentals#filter', as: :search_rentals_seo
 
   get 'search', to: 'static_pages#search', as: 'search'
   get 'contact', to: 'static_pages#contact', as: 'contact'

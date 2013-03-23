@@ -2,13 +2,48 @@ class RentalsController < ApplicationController
   # GET /rentals
   # GET /rentals.json
   def index
-    @rentals = Rental.all
+    #@rentals = Rental.all
+    #if params[:q].present?
+    #  destination = Destination.where(id: params[:q][:destination_id]).first
+    #  params[:q][:destination_name] = destination.place.parameterize if destination
+    #  redirect_to search_rentals_seo_path(params[:q])
+    #  return
+    #end
+    #@search = Rental.search params[:q]
+    #@rentals = @search.result.order("sleeps DESC")
+
+    @photos = Photo.all
+    if params[:destination_id]
+      #@destinations = Destination.all
+      @rentals = Rental.find_all_by_destination_id(params[:destination_id])
+    elsif params[:sleeps]
+      @rentals = Rental.find_all_by_sleeps(params[:sleeps][:num])
+    elsif params[:bedrooms]
+      @rentals = Rental.find_all_by_bedrooms(params[:bedrooms][:num])
+    else
+      @rentals = Rental.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @rentals }
     end
   end
+
+  #def filter
+  #  @rentals = Rental
+  #  @rentals = @rentals.where("sleeps >= ?", params[:sleeps]) if params[:sleeps].present?
+  #  @rentals = @rentals.where("bedrooms >= ?", params[:bedrooms]) if params[:bedrooms].present?
+  #  @rentals = @rentals.joins(:destinations).where("destinations.id" => params[:destination_id]) if params[:destination_id].present?
+  #  @rentals = @rentals.order("sleeps DESC")
+
+  #  @photos = Photo.all
+
+  #  respond_to do |format|
+      #format.html { render "index" }
+      #format.json { render :json => @photos.collect { |p| p.to_jq_upload }.to_json  }
+  #  end
+  #end
 
   # GET /rentals/1
   # GET /rentals/1.json
@@ -83,7 +118,7 @@ class RentalsController < ApplicationController
       if @rental.update_attributes(rental_data)
         update_photos_with_rental_id photo_ids, @rental
 
-        format.html { redirect_to @rental, notice: 'Villa was successfully updated.' }
+        format.html { redirect_to @rental, notice: 'Rental was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

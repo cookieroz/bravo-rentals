@@ -4,8 +4,7 @@ class DestinationsController < ApplicationController
   # GET /destinations.json
   def index
     @destinations = Destination.all
-
-    respond_to do |format|
+      respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @destinations }
     end

@@ -1,6 +1,28 @@
 <% provide(:title, "Vacation Rentals") %>
 <h1>Listing rentals</h1>
 
+<%#= render 'filter_form' %>
+<%= form_tag(rentals_path,
+             :method => :get) do %>
+    <%= select_tag(:destination_id,
+                   options_from_collection_for_select(Destination.all, :id, :name)) %>
+    <%= submit_tag %>
+<% end %>
+
+<%= form_tag(rentals_path,
+             :method => :get) do %>
+    <%= select(:sleeps, :num, Rental.pluck(:sleeps).uniq,
+               {:prompt => "Select Sleeps Filter"}) %>
+    <%= submit_tag %>
+<% end %>
+
+<%= form_tag(rentals_path,
+             :method => :get) do %>
+    <%= select(:bedrooms, :num, Rental.pluck(:bedrooms).uniq,
+               {:prompt => "Select Bedroom Filter"}) %>
+    <%= submit_tag %>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>

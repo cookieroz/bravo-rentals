@@ -23,6 +23,10 @@ class Rental < ActiveRecord::Base
     "#{self.latitude}, #{self.longitude}"
   end
 
+  #def self.by_destinations(destination)
+  #  joins(:destination).where('destination_id = ?', destination.to_i)
+  #end
+
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 end

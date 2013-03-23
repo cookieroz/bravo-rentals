@@ -1,0 +1,21 @@
+<%= form_tag rentals_path, method: :get do |f| %>
+    <div class="span6 no-left-margin">
+      <%= select_tag(
+                  "q[sleeps]",
+                  options_for_select(%w[+2 +4 +6 +8 +10].each_with_index.map {|name, index| [name, name.to_i]}, params[:sleeps]),
+                  { prompt: t("villas.index.selectsleep") }
+          ) %>
+      <%= select_tag(
+                  "q[bedrooms]",
+                  options_for_select(%w[1 2 3 4 5 +6].each_with_index.map {|name, index| [name, name.to_i]}, selected: params[:bedrooms]),
+                  { :prompt => t("villas.index.selectbed") }
+          ) %>
+      <%= select_tag(
+                  "q[location_id]",
+                  options_from_collection_for_select(Location.order(:place).all, :id, :place, params[:location_id]),
+                  { :prompt => t("villas.index.selecttown") }) %>
+    </div>
+    <div class="span1">
+      <%= submit_tag "Search", class: "btn btn-info" %>
+    </div>
+<% end %>
