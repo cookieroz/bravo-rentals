@@ -24,6 +24,8 @@ class RentalsController < ApplicationController
       @rentals = Rental.all
     end
 
+    @rentals_no_filter = Rental.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @rentals }
