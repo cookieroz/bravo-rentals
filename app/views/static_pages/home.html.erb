@@ -15,20 +15,6 @@
             <option value="4">Motril</option>
             <option value="2">Salobrena</option>
           </select>
-          <div class="input-append pull-left">
-            <input id="start_date" type="text" placeholder="Check-in" name="start_date"
-                   data-behaviour="datepicker">
-            <span class="add-on">
-              <i class="icon-calendar"></i>
-            </span>
-          </div>
-          <div class="input-append pull-right">
-            <input id="end_date" type="text" placeholder="Check-out" name="end_date"
-                   data-behaviour="datepicker">
-            <span class="add-on">
-              <i class="icon-calendar"></i>
-            </span>
-          </div>
           <select id="q_bedrooms_gteq" name="q[bedrooms_gteq]">
             <option value="">Filter by Bedrooms</option>
             <option value="1">1</option>
@@ -67,37 +53,6 @@
         <input class="btn btn-warning" type="submit" value="Guide File">
       </div>
       <div class="clear"></div>
-      <div class="featured-rentals">
-        <p class="lead">Featured Properties</p>
-        <ul class="thumbnails">
-          <li class="span3">
-            <div class="thumbnail">
-              <%= link_to image_tag("rental-home-pic.jpg"), "#" %>
-              <p><%= link_to "Rental Property", "#" %></p>
-              <div class="destination-show-link">
-                <ul class="unstyled">
-                  <li>Sleeps: 9</li>
-                  <li>Location: Destination</li>
-                  <li>Bedrooms: 4</li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <li class="span3">
-            <div class="thumbnail">
-              <%= link_to image_tag("rental-home-pic.jpg"), "#" %>
-              <p><%= link_to "Rental Property", "#" %></p>
-              <div class="destination-show-link">
-                <ul class="unstyled">
-                  <li>Sleeps: 9</li>
-                  <li>Location: Destination</li>
-                  <li>Bedrooms: 4</li>
-                </ul>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
   <div class="span5 right-home-div">
@@ -110,6 +65,46 @@
         <li> > Summer rental destinations</li>
         <li> > Fall rental destinations</li>
         <li> > Winter rental destinations </li>
+      </ul>
+    </div>
+  </div>
+  <div class="span12">
+    <div class="featured-rentals">
+      <p class="lead">Featured Properties</p>
+      <ul class="thumbnails">
+        <% unless @rentals.nil? %>
+          <% @rentals.each do |rental| %>
+            <li class="span3">
+              <div class="thumbnail">
+                <% unless rental.photos.nil? %>
+                  <%= link_to image_tag(rental.photos.first.url), rental %>
+                <% end %>
+                <p><%= link_to rental.name, rental  %></p>
+                <div class="destination-show-link">
+                  <ul class="unstyled">
+                    <li>Sleeps: <%= rental.sleeps %></li>
+                    <li>Location: <%= link_to rental.destination.name,
+                                              destination_path(rental.destination.id)  %></li>
+                    <li>Bedrooms: <%= rental.bedrooms %></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+        <li class="span3">
+          <div class="thumbnail">
+            <%= link_to image_tag("rental-home-pic.jpg"), "#" %>
+            <p><%= link_to "Rental Property", "#" %></p>
+            <div class="destination-show-link">
+              <ul class="unstyled">
+                <li>Sleeps: 9</li>
+                <li>Location: Destination</li>
+                <li>Bedrooms: 4</li>
+              </ul>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

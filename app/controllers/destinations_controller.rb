@@ -3,7 +3,14 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
-    @destinations = Destination.all
+    #@destinations = Destination.all
+
+    if params[:name]
+      @destinations = Destination.find_all_by_name(params[:name])
+    else
+      @destinations = Destination.all
+    end
+
       respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @destinations }

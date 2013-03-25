@@ -40,8 +40,8 @@ class RentalsController < ApplicationController
   #  @photos = Photo.all
 
   #  respond_to do |format|
-      #format.html { render "index" }
-      #format.json { render :json => @photos.collect { |p| p.to_jq_upload }.to_json  }
+  #format.html { render "index" }
+  #format.json { render :json => @photos.collect { |p| p.to_jq_upload }.to_json  }
   #  end
   #end
 
@@ -148,13 +148,13 @@ class RentalsController < ApplicationController
   end
 
   private
-    def update_photos_with_rental_id photo_ids, rental
-      photo_ids.split(',').each do |id|
-        photo = Photo.where(id: id).first
-        if photo.present?
-          photo.imageable = rental
-          photo.save
-        end
+  def update_photos_with_rental_id photo_ids, rental
+    photo_ids.split(',').each do |id|
+      photo = Photo.where(id: id).first
+      if photo.present?
+        photo.imageable = rental
+        photo.save
       end
     end
+  end
 end

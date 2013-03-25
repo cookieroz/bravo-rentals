@@ -5,39 +5,19 @@
     <div class="span2">
       <form class="destination-index-form">
         <fieldset>
-          <legend>Filter your search</legend>
+          <legend>Filter Locations</legend>
           <label>Location:</label>
-          <select>
-            <% @destinations.each do |destination| %>
-                <option><%= destination.name  %></option>
-            <% end %>
-          </select>
-          <label>Features:</label>
-          <label class="checkbox">
-            <input type="checkbox"> Private Pool
-          </label>
-          <label class="checkbox">
-            <input type="checkbox"> Air Conditioning
-          </label>
-          <label class="checkbox">
-            <input type="checkbox"> Satellite TV
-          </label>
-          <label class="checkbox">
-            <input type="checkbox"> Internet
-          </label>
-          <label>Price:</label>
-          <label class="checkbox">
-            <input type="checkbox"> - 500&euro;
-          </label>
-          <label class="checkbox">
-            <input type="checkbox"> 500&euro; - 1.000&euro;
-          </label>
-          <label class="checkbox">
-            <input type="checkbox"> 1.000&euro; - 1.500&euro;
-          </label>
-          <label class="checkbox">
-            <input type="checkbox"> + 1.500&euro;
-          </label>
+          <%= form_tag(destinations_path,
+                       :method => :get) do %>
+              <%= select_tag(:name,
+                             options_from_collection_for_select(Destination.all, :name, :name)) %>
+              <%= submit_tag %>
+          <% end %>
+          <% @destinations.each do |destination| %>
+              <label class="checkbox">
+                <input type="checkbox"> <%= destination.name  %>
+              </label>
+          <% end %>
           <div class="center">
             <button type="submit" class="btn">Submit</button>
           </div>
@@ -73,7 +53,7 @@
                       <div class="destination-show-link">
                         <ul class="unstyled">
                           <li class="pull-left">Sleeps: <%= rental.sleeps %></li>
-                          <li class="pull-left left-10-margin">Bedrooms: <%= rental.bedrooms %></li>
+                          <li class="pull-left left-10-margin">Bd: <%= rental.bedrooms %></li>
                           <li class="clear"> |
                             <% rental.features.limit(3).each do |feature| %>
                                 <% unless feature.name.blank? %>

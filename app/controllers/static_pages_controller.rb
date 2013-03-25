@@ -3,6 +3,8 @@ class StaticPagesController < ApplicationController
   end
 
   def home
+    @rentals = Rental.scoped.limit(4).order("RANDOM()")
+    @destinations = Destination.all
   end
 
   def contact
