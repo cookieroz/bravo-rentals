@@ -81,7 +81,7 @@
           <div class="row">
             <p class="lead span10"><%= link_to rental.name, rental  %></p>
             <p class="span10">Vacation Rental in <%= link_to rental.destination.name,
-                                              destination_path(rental.destination)  %></p>
+                                              "#"  %></p>
             <div class="span7">
               <% unless rental.photos.nil? %>
                   <%= link_to image_tag(rental.photos.first.url), rental %>
