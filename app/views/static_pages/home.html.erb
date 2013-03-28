@@ -5,27 +5,7 @@
         <p class="lead">View Map</p>
       </div>
       <div class="rental-home-filter">
-        <form>
-          <select id="locations" name="q[locations_id_eq]" class="rental-select">
-            <option value="">Where would you like to go?</option>
-            <option value="1">Almunecar</option>
-            <option value="5">La Herradura</option>
-            <option value="3">Las Alpujarras</option>
-            <option value="6">Morocco/Marruecos - Tetouan</option>
-            <option value="4">Motril</option>
-            <option value="2">Salobrena</option>
-          </select>
-          <select id="q_bedrooms_gteq" name="q[bedrooms_gteq]">
-            <option value="">Filter by Bedrooms</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="+6">+6</option>
-          </select>
-          <input class="btn btn-warning clear" type="submit" value="Search" name="commit">
-        </form>
+        <%= render "rentals/filter_form" %>
       </div>
     </div>
     <div class="span9 no-left-margin">

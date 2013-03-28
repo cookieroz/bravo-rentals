@@ -1,22 +1,33 @@
 <%= form_tag rentals_path, method: :get do |f| %>
-    <div class="span6 no-left-margin">
-      <%= select_tag(
+  <div class="span6 no-left-margin">
+    <%= select_tag(
                   "q[sleeps]",
                   options_for_select(%w[+2 +4 +6 +8 +10].each_with_index.map {|name, index| [name, name.to_i]}, params[:sleeps]),
-                  { prompt: "Occupancy" }
+                  { prompt: 'select sleep' }
           ) %>
-      <%= select_tag(
+    <%= select_tag(
                   "q[bedrooms]",
-                  options_for_select(%w[1 2 3 4 5 +6].each_with_index.map {|name, index|
-                    [name, name.to_i]}, selected: params[:bedrooms]),
-                  { :prompt => "Bedrooms" }
+                  options_for_select(%w[1 2 3 4 5 +6].each_with_index.map {|name, index| [name, name.to_i]}, selected: params[:bedrooms]),
+                  { :prompt => 'select bed' }
           ) %>
-      <%= select_tag(
+    <%= select_tag(
                   "q[destination_id]",
-                  options_for_select(Rental.find_all_by_destination_id("name"), selected: params[:destination_id]),
-                  { :prompt => "Destination" }) %>
+                  options_from_collection_for_select(Destination.order(:name).all, :id, :name, params[:destination_id]),
+                  { :prompt => 'select town' }) %>
+  </div>
+    <div class="input-append pull-left">
+      <span class="add-on"><i class="icon-calendar"></i></span>
+      <%= text_field_tag "q[start_date]", params[:start_date],
+                         "data-behaviour" => "datepicker",
+                         placeholder: "Check-in" %>
     </div>
-    <div class="span1">
-      <%= submit_tag "Search", class: "btn btn-info" %>
+    <div class="input-append pull-left">
+      <span class="add-on"><i class="icon-calendar"></i></span>
+      <%= text_field_tag "q[end_date]", params[:end_date],
+                         "data-behaviour" => "datepicker",
+                         placeholder: "Check-out" %>
     </div>
+  <div class="span1">
+    <%= submit_tag "Search", class: "btn btn-info" %>
+  </div>
 <% end %>

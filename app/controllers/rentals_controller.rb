@@ -2,15 +2,13 @@ class RentalsController < ApplicationController
   # GET /rentals
   # GET /rentals.json
   def index
-    #@rentals = Rental.all
-    #if params[:q].present?
-    #  destination = Destination.where(id: params[:q][:destination_id]).first
-    #  params[:q][:destination_name] = destination.place.parameterize if destination
-    #  redirect_to search_rentals_seo_path(params[:q])
-    #  return
-    #end
-    #@search = Rental.search params[:q]
-    #@rentals = @search.result.order("sleeps DESC")
+    if params[:q].present?
+      params[:q][:start_date] = Time.parse(params[:q][:start_date]).to_i if params[:q][:start_date].present?
+      params[:q][:end_date] = Time.parse(params[:q][:end_date]).to_i if params[:q][:end_date].present?
+      destination = Destination.where(id: params[:q][:destination_id]).first
+      params[:q][:destination_name] = destination.name.parameterize if destination
+      redirect_to filter_rentals_path(params[:q]) and return
+    end
 
     @photos = Photo.all
     if params[:destination_id]
@@ -32,20 +30,31 @@ class RentalsController < ApplicationController
     end
   end
 
-  #def filter
-  #  @rentals = Rental
-  #  @rentals = @rentals.where("sleeps >= ?", params[:sleeps]) if params[:sleeps].present?
-  #  @rentals = @rentals.where("bedrooms >= ?", params[:bedrooms]) if params[:bedrooms].present?
-  #  @rentals = @rentals.joins(:destinations).where("destinations.id" => params[:destination_id]) if params[:destination_id].present?
-  #  @rentals = @rentals.order("sleeps DESC")
+  def filter
+    params[:start_date] = Time.at(params[:start_date].to_i).to_date if params[:start_date].present?
+    params[:end_date] = Time.at(params[:end_date].to_i).to_date if params[:end_date].present?
+    @rentals = Rental
+    @rentals = @rentals.where("sleeps >= ?", params[:sleeps]) if params[:sleeps].present?
+    @rentals = @rentals.where("bedrooms >= ?", params[:bedrooms]) if params[:bedrooms].present?
+    @rentals = @rentals.joins(:destinations).where("destinations.id" => params[:destination_id]) if params[:destination_id].present?
+    @rentals = @rentals.order("sleeps DESC")
+    if params[:start_date].present? && params[:end_date].present?
+      overlaped_villas = Villa.
+        joins(:reservations).
+        where("start_date <= ? AND end_date >= ?", params[:end_date], params[:start_date])
 
-  #  @photos = Photo.all
+      @rentals = @rentals.where("rentals.id not in (?)", overlaped_villas) if overlaped_villas.any?
+    end
 
-  #  respond_to do |format|
-  #format.html { render "index" }
-  #format.json { render :json => @photos.collect { |p| p.to_jq_upload }.to_json  }
-  #  end
-  #end
+    @rentals_no_filter = Rental.all
+
+    @photos = Photo.all
+
+    respond_to do |format|
+      format.html { render "index" }
+      format.json { render :json => @photos.collect { |p| p.to_jq_upload }.to_json  }
+    end
+  end
 
   # GET /rentals/1
   # GET /rentals/1.json

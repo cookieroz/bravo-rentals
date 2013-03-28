@@ -18,8 +18,7 @@ gem 'simple_form', '2.0.4'
 gem 'json', '1.7.5'
 gem 'breadcrumbs_on_rails', '2.3.0'
 gem 'pg_search', '0.5.7'
-#gem 'ransack'
-
+gem 'truncate_html'
 
 # Gems used only for assets and not required
 # in production environments by default.
