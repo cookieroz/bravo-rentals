@@ -19,19 +19,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="20" selection-start="1865" selection-end="1865" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="19" selection-start="3048" selection-end="3048" vertical-scroll-proportion="0.0">
+            <state line="81" column="19" selection-start="3048" selection-end="3048" vertical-scroll-proportion="-0.625">
               <folding />
             </state>
           </provider>
@@ -73,10 +64,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/rentals/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="48" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.38651314">
+            <state line="6" column="90" selection-start="141" selection-end="141" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_filter_form.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/rentals/_filter_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="56" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.75630254">
               <folding />
             </state>
           </provider>
@@ -125,7 +125,6 @@
         <option value="$PROJECT_DIR$/app/views/destinations/_filter_form.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/models/rental.rb" />
-        <option value="$PROJECT_DIR$/app/views/rentals/_filter_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/destinations_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/destinations/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
@@ -135,12 +134,13 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/rentals_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/rentals/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/rentals/_filter_form.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="174" />
-    <option name="y" value="61" />
+    <option name="x" value="65" />
+    <option name="y" value="27" />
     <option name="width" value="1082" />
     <option name="height" value="800" />
   </component>
@@ -170,7 +170,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -408,6 +407,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -669,14 +669,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="174" y="61" width="1082" height="800" extended-state="0" />
+    <frame x="65" y="27" width="1082" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2934363" sideWeight="0.67140824" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2992278" sideWeight="0.67140824" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -760,23 +760,6 @@
         <state line="27" column="3" selection-start="936" selection-end="936" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/destinations/_filter_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="102" selection-start="777" selection-end="777" vertical-scroll-proportion="0.3529412" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/rentals/_filter_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="56" selection-start="931" selection-end="931" vertical-scroll-proportion="0.48622367" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/destinations_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="72" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/rentals/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="56" selection-start="992" selection-end="1212" vertical-scroll-proportion="-14.375" />
@@ -803,16 +786,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/rentals/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="60" selection-start="1247" selection-end="1270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="19" selection-start="3048" selection-end="3048" vertical-scroll-proportion="0.0">
+        <state line="81" column="19" selection-start="3048" selection-end="3048" vertical-scroll-proportion="-0.625">
           <folding />
         </state>
       </provider>
@@ -838,9 +814,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/rentals/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="60" selection-start="1247" selection-end="1270" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/destinations_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="72" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/destinations/_filter_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="43" selection-start="970" selection-end="970" vertical-scroll-proportion="0.5294118">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/rentals/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="48" selection-start="2986" selection-end="2986" vertical-scroll-proportion="0.38651314">
+        <state line="6" column="90" selection-start="141" selection-end="141" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/rentals/_filter_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="56" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.75630254">
           <folding />
         </state>
       </provider>
