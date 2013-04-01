@@ -64,6 +64,8 @@ class RentalsController < ApplicationController
     @images = @rental.photos
     @message = Message.new
 
+    @rentals = Rental.scoped.limit(2).order("RANDOM()")
+
     add_breadcrumb "#{@rental.destination.name}", destination_path(@rental.destination)
     add_breadcrumb "Vacation Rentals", rentals_path
 

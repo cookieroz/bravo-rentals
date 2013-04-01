@@ -2,6 +2,7 @@
 <h1>Listing rentals</h1>
 
 <%= render 'filter_form' %>
+<div class="clear"></div>
 
 <div class="dest-index">
   <div class="row">
@@ -63,7 +64,7 @@
             <p class="span10">Vacation Rental in <%= link_to rental.destination.name,
                                               "#"  %></p>
             <div class="span7">
-              <% unless rental.photos.nil? %>
+              <% unless rental.photos.first.nil? %>
                   <%= link_to image_tag(rental.photos.first.url), rental %>
               <% end %>
             </div>

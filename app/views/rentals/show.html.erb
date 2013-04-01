@@ -81,6 +81,27 @@
             </div>
         <% end %>
       </div>
+      <div class="more-rentals">
+        <p class="lead">More Vacation Rentals</p>
+        <ul class="thumbnails">
+          <% unless @rentals.nil? %>
+              <% @rentals.each do |rental| %>
+                  <li class="span3">
+                    <div class="thumbnail">
+                      <% unless rental.photos.first.nil? %>
+                          <%= link_to image_tag(rental.photos.first.url), rental %>
+                      <% end %>
+                      <p>
+                        <%= link_to rental.destination.name,
+                                    destination_path(rental.destination.id)  %>
+                        <%= raw truncate(strip_tags(rental.content), :length => 100) %>
+                      </p>
+                    </div>
+                  </li>
+              <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 

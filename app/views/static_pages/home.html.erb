@@ -56,7 +56,7 @@
           <% @rentals.each do |rental| %>
             <li class="span3">
               <div class="thumbnail">
-                <% unless rental.photos.nil? %>
+                <% unless rental.photos.first.nil? %>
                   <%= link_to image_tag(rental.photos.first.url), rental %>
                 <% end %>
                 <p><%= link_to rental.name, rental  %></p>
@@ -72,19 +72,6 @@
             </li>
           <% end %>
         <% end %>
-        <li class="span3">
-          <div class="thumbnail">
-            <%= link_to image_tag("rental-home-pic.jpg"), "#" %>
-            <p><%= link_to "Rental Property", "#" %></p>
-            <div class="destination-show-link">
-              <ul class="unstyled">
-                <li>Sleeps: 9</li>
-                <li>Location: Destination</li>
-                <li>Bedrooms: 4</li>
-              </ul>
-            </div>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
