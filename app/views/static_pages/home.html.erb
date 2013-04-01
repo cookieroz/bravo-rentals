@@ -54,7 +54,7 @@
       <ul class="thumbnails">
         <% unless @rentals.nil? %>
           <% @rentals.each do |rental| %>
-            <li class="span3">
+            <li class="span3 left-10-margin">
               <div class="thumbnail">
                 <% unless rental.photos.first.nil? %>
                   <%= link_to image_tag(rental.photos.first.url), rental %>
