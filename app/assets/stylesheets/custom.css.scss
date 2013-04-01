@@ -195,11 +195,17 @@ header {
     border-radius: 8px;
     margin: 10px 0 10px 0;
     padding: 10px;
-    .span3 {
-      margin-bottom: 0;
-      .thumbnail {
-        border: none;
-        box-shadow: none;
+    .thumbnails {
+      padding-left: 10px;
+      li {
+        margin-left: 10px;
+        .span3 {
+          margin-bottom: 0;
+          .thumbnail {
+            border: none;
+            box-shadow: none;
+          }
+        }
       }
     }
   }

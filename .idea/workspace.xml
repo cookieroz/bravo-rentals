@@ -19,19 +19,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="43" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.2949757">
+            <state line="56" column="35" selection-start="1893" selection-end="1893" vertical-scroll-proportion="-7.5833335">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="custom.css.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="528" column="23" selection-start="9353" selection-end="9353" vertical-scroll-proportion="0.0">
+            <state line="198" column="24" selection-start="3334" selection-end="3334" vertical-scroll-proportion="0.4587156">
               <folding />
             </state>
           </provider>
@@ -106,8 +106,8 @@
         <option value="$PROJECT_DIR$/app/views/rentals/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/rentals_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/rentals/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
       </list>
     </option>
   </component>
@@ -852,16 +852,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="528" column="23" selection-start="9353" selection-end="9353" vertical-scroll-proportion="0.0">
+        <state line="56" column="35" selection-start="1893" selection-end="1893" vertical-scroll-proportion="-7.5833335">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/static_pages/home.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="43" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.2949757">
+        <state line="198" column="24" selection-start="3334" selection-end="3334" vertical-scroll-proportion="0.4587156">
           <folding />
         </state>
       </provider>
