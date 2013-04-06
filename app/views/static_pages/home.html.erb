@@ -24,14 +24,21 @@
       <hr>
       <%= link_to image_tag("rental-home-pic.jpg", class: "home-travel-img"), "#",
                   class: "pull-left" %>
-      <div class="home-travel-text pull-right">
-        <p class="lead">Latest Guide:</p>
-        <h4>Lake Tahoe</h4>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae.</p>
-        <input class="btn btn-warning" type="submit" value="Guide File">
-      </div>
+      <% unless @destinations.nil? %>
+          <% @destinations.each do |dest| %>
+              <%# unless dest.dest_image.nil? %>
+                  <%#= link_to image_tag(dest.dest_image.url,
+                              class: "home-travel-img"), dest,
+                              class: "pull-left" %>
+              <%# end %>
+              <div class="home-travel-text pull-right">
+                <p class="lead">Latest Guide:</p>
+                <h4><%= link_to dest.name, dest  %></h4>
+                <p><%= raw truncate(strip_tags(dest.content), :length => 250) %></p>
+                <input class="btn btn-warning" type="submit" value="Guide File">
+              </div>
+          <% end %>
+      <% end %>
       <div class="clear"></div>
     </div>
   </div>
