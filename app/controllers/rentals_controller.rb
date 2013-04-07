@@ -36,17 +36,15 @@ class RentalsController < ApplicationController
     @rentals = Rental
     @rentals = @rentals.where("sleeps >= ?", params[:sleeps]) if params[:sleeps].present?
     @rentals = @rentals.where("bedrooms >= ?", params[:bedrooms]) if params[:bedrooms].present?
-    @rentals = @rentals.joins(:destinations).where("destinations.id" => params[:destination_id]) if params[:destination_id].present?
+    @rentals = @rentals.where(destination_id: params[:destination_ids]) if params[:destination_ids].present?
     @rentals = @rentals.order("sleeps DESC")
     if params[:start_date].present? && params[:end_date].present?
-      overlaped_villas = Villa.
+      overlapped_rentals = Rental.
         joins(:reservations).
         where("start_date <= ? AND end_date >= ?", params[:end_date], params[:start_date])
 
-      @rentals = @rentals.where("rentals.id not in (?)", overlaped_villas) if overlaped_villas.any?
+      @rentals = @rentals.where("rentals.id not in (?)", overlapped_rentals) if overlapped_rentals.any?
     end
-
-    @rentals_no_filter = Rental.all
 
     @photos = Photo.all
 

@@ -1,0 +1,53 @@
+<form class="destination-index-form">
+<%= form_tag filter_rentals_path %>
+  <fieldset>
+    <legend>Filter your search</legend>
+
+    <label>Location:</label>
+    <% Destination.all.each do |destination| %>
+      <label class="checkbox">
+        <%= check_box_tag "destination_ids[]", destination.id, params[:destination_ids] && params[:destination_ids].include?(destination.id.to_s) %>
+        <%= destination.name %>
+      </label>
+    <% end %>
+
+    <label>Features:</label>
+    <% Feature.all.each do |feature| %>
+        <% unless feature.name.blank? %>
+            <label class="checkbox">
+              <input type="checkbox"> <%= feature.name  %>
+            </label>
+        <% end %>
+    <% end %>
+
+    <label>Occupancy:</label>
+    <% Rental.order(:sleeps).pluck(:sleeps).uniq.each do |sleeps| %>
+        <label class="checkbox">
+          <%= check_box_tag "sleeps[]", sleeps %> <%= sleeps  %>
+        </label>
+    <% end %>
+    <label>Bedrooms:</label>
+    <% Rental.order(:bedrooms).pluck(:bedrooms).uniq.each do |bedrooms| %>
+        <label class="checkbox">
+          <%= check_box_tag "bedrooms[]", bedrooms %> <%= bedrooms  %>
+        </label>
+    <% end %>
+
+    <label>Price:</label>
+    <label class="checkbox">
+      <%= check_box_tag "min_price[]", 0 %> - 500&euro;
+    </label>
+    <label class="checkbox">
+      <%= check_box_tag "min_price[]", 500 %> 500&euro; - 1.000&euro;
+    </label>
+    <label class="checkbox">
+      <%= check_box_tag "min_price[]", 1000 %> 1.000&euro; - 1.500&euro;
+    </label>
+    <label class="checkbox">
+      <%= check_box_tag "min_price[]", 1500 %> + 1.500&euro;
+    </label>
+    <div class="center">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </fieldset>
+</form>
