@@ -17,7 +17,7 @@ BravoRentals::Application.routes.draw do
     collection { post :search, to: 'rentals#index' }
   end
 
-  match '/rentals/in/:destination_name-:destination_id-(:sleeps)-(:bedrooms)-(:start_date)-(:end_date)', to: 'rentals#filter', as: :filter_rentals
+  match "/rentals/in/-(:destination_name)-(:destination_id)-(:sleeps)-(:bedrooms)-(:start_date)-(:end_date)", to: 'rentals#filter', as: :filter_rentals
 
   get 'search', to: 'static_pages#search', as: 'search'
   get 'contact', to: 'static_pages#contact', as: 'contact'
