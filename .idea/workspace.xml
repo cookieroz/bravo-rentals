@@ -37,10 +37,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_header.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="6" selection-start="598" selection-end="598" vertical-scroll-proportion="0.4225352">
+            <state line="18" column="6" selection-start="598" selection-end="598" vertical-scroll-proportion="-11.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/rentals/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="21" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5714286">
               <folding />
             </state>
           </provider>
@@ -68,7 +77,6 @@
         <option value="$PROJECT_DIR$/app/controllers/photos_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/rentals/_filter_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/rentals/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/rentals_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/rentals/show.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
@@ -81,6 +89,7 @@
         <option value="$PROJECT_DIR$/app/views/guides/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/guides/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/rentals/index.html.erb" />
       </list>
     </option>
   </component>
@@ -754,13 +763,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/destination.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="43" selection-start="899" selection-end="899" vertical-scroll-proportion="0.520362">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/destinations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="44" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
@@ -861,7 +863,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="598" selection-end="598" vertical-scroll-proportion="0.4225352">
+        <state line="18" column="6" selection-start="598" selection-end="598" vertical-scroll-proportion="-11.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/rentals/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="21" selection-start="808" selection-end="808" vertical-scroll-proportion="0.5714286">
           <folding />
         </state>
       </provider>
