@@ -1,0 +1,32 @@
+<%= simple_form_for @guide,
+                    :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs control-group">
+    <%= f.input :name %>
+    <%= f.association :destination %>
+    <%= f.input :overview, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+    <%= f.input :arrival, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+    <%= f.input :whatdo, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+    <%= f.input :whengo, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+    <%= f.input :weather, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+    <%= f.input :eatout, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+    <%= f.input :history, :as => :ckeditor,
+                :input_html => { :toolbar => 'Full' } %>
+  </div>
+
+  <% @guide.build_guide_image %>
+    <%= f.simple_fields_for :guide_image do |ff| %>
+    <%= ff.file_field :image, class: 'controls' %>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

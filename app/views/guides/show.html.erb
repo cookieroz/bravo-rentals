@@ -1,0 +1,136 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @guide.name %>
+</p>
+
+<p>
+  <b>Overview:</b>
+  <%= @guide.overview %>
+</p>
+
+<p>
+  <b>Arrival:</b>
+  <%= @guide.arrival %>
+</p>
+
+<p>
+  <b>Whatdo:</b>
+  <%= @guide.whatdo %>
+</p>
+
+<p>
+  <b>Whengo:</b>
+  <%= @guide.whengo %>
+</p>
+
+<p>
+  <b>Weather:</b>
+  <%= @guide.weather %>
+</p>
+
+<p>
+  <b>Eatout:</b>
+  <%= @guide.eatout %>
+</p>
+
+<p>
+  <b>History:</b>
+  <%= @guide.history %>
+</p>
+
+
+<%= link_to 'Edit', edit_guide_path(@guide) %> |
+<%= link_to 'Back', guides_path %>
+
+<% provide(:title, @guide.name) %>
+
+<% if current_user %>
+    <%= link_to("Edit", edit_guide_path(@guide), class: 'btn btn-primary') %> |
+    <%= link_to("Back", guides_path, class: 'btn') %>
+<% end %>
+<div class="destination-show">
+  <div class="tabbable"> <!-- Only required for left/right tabs -->
+    <ul class="nav nav-tabs">
+      <%= @guide.destination.name %>
+      <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
+      <li><a href="#tab2" data-toggle="tab">Getting there</a></li>
+      <li><a href="#tab3" data-toggle="tab">What to do</a></li>
+      <li><a href="#tab4" data-toggle="tab">When to go</a></li>
+      <li><a href="#tab5" data-toggle="tab">Weather</a></li>
+      <li><a href="#tab6" data-toggle="tab">Eat out</a></li>
+      <li><a href="#tab7" data-toggle="tab">History</a></li>
+      <li><a href="#tab8" data-toggle="tab">Properties</a></li>
+    </ul>
+    <div class="tab-content">
+      <% unless @guide.guide_image.nil? %>
+          <%= image_tag(@guide.guide_image.url, class: 'dest-img') %>
+      <% end %>
+      <div class="tab-pane" id="tab1">
+        <p class="lead">Overview of <%= @guide.destination.name %></p>
+        <%= raw @guide.overview %>
+      </div>
+      <div class="tab-pane" id="tab1">
+        <p class="lead">Getting to <%= @guide.destination.name %></p>
+        <%= raw @guide.arrival %>
+      </div>
+      <div class="tab-pane" id="tab3">
+        <p class="lead">What to do in <%= @guide.destination.name %></p>
+        <%= raw @guide.whatdo %>
+      </div>
+      <div class="tab-pane" id="tab4">
+        <p class="lead">When to go to <%= @guide.destination.name %> </p>
+        <%= raw @guide.whengo %>
+      </div>
+      <div class="tab-pane" id="tab5">
+        <p class="lead">Weather in <%= @guide.name %></p>
+        <%= raw @guide.weather %>
+      </div>
+      <div class="tab-pane" id="tab6">
+        <p class="lead">Eatting out in <%= @guide.destination.name %></p>
+        <%= raw @guide.eatout %>
+      </div>
+      <div class="tab-pane" id="tab7">
+        <p class="lead">History of <%= @guide.destination.name %></p>
+        <%= raw @guide.history %>
+      </div>
+      <div class="tab-pane active" id="tab8">
+        <p class="lead">Vacation Rentals in <%= @guide.destination.name %></p>
+        <ul class="thumbnails">
+          <% @guide.destination.rentals.each do |rental| %>
+              <li class="span3 zebra">
+                <div class="thumbnail">
+                  <% unless rental.photos.first.nil? %>
+                      <%= link_to image_tag(rental.photos.first.url), rental %>
+                  <% end %>
+                  <p class="lead"><%= link_to rental.name, rental %></p>
+                  <div class="destination-show-link">
+                    <ul class="unstyled">
+                      <li class="pull-left">Sleeps: <%= rental.sleeps %></li>
+                      <li class="pull-left left-10-margin">Bedrooms: <%= rental.bedrooms %></li>
+                      <li class="clear"> |
+                        <% rental.features.each do |feature| %>
+                            <% unless feature.name.blank? %>
+                                <%= feature.name %> |
+                            <% end %>
+                        <% end %>
+                      </li>
+                    </ul>
+                    <h3 class="center">Rental Price</h3>
+                  </div>
+                </div>
+              </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <% if current_user %>
+      <%= link_to 'Edit', edit_guide_path(@guide) %> |
+  <% end %>
+  <%= link_to 'Back', guides_path %>
+</div>
+
+

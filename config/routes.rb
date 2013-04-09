@@ -1,6 +1,9 @@
 BravoRentals::Application.routes.draw do
 
 
+  resources :guides
+
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :destinations
   resources :users
