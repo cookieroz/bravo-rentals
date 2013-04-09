@@ -560,6 +560,51 @@ header {
 /* Guides Styles */
 
 
+.guide-show {
+  .guide-img {
+    height: 200px;
+    width: 800px;
+  }
+  .nav-tabs {
+    border-right-color: $bvrYellow;
+    li {
+      color: $bvrYellow;
+      font-size: 16px;
+      padding-right: 5px;
+      a {
+        border: none;
+        color: $bvrBlue;
+        font-size: 14px;
+        padding: 3px;
+        text-align: right;
+        &:hover {
+          background: none;
+          border: none;
+          font-weight: bold;
+        }
+        &:active {
+          background: none;
+          border: none;
+          font-weight: bold;
+        }
+      }
+    }
+    li.active a {
+      color: #555;
+      font-weight: bold;
+    }
+    .pdf {
+      background: $bvrBlue;
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 12px;
+      margin-right: 3px;
+      padding: 3px;
+      text-align: center;
+    }
+  }
+}
+
 
 /* Contact Styles */
 

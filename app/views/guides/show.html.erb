@@ -1,59 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @guide.name %>
-</p>
-
-<p>
-  <b>Overview:</b>
-  <%= @guide.overview %>
-</p>
-
-<p>
-  <b>Arrival:</b>
-  <%= @guide.arrival %>
-</p>
-
-<p>
-  <b>Whatdo:</b>
-  <%= @guide.whatdo %>
-</p>
-
-<p>
-  <b>Whengo:</b>
-  <%= @guide.whengo %>
-</p>
-
-<p>
-  <b>Weather:</b>
-  <%= @guide.weather %>
-</p>
-
-<p>
-  <b>Eatout:</b>
-  <%= @guide.eatout %>
-</p>
-
-<p>
-  <b>History:</b>
-  <%= @guide.history %>
-</p>
-
-
-<%= link_to 'Edit', edit_guide_path(@guide) %> |
-<%= link_to 'Back', guides_path %>
-
 <% provide(:title, @guide.name) %>
 
-<% if current_user %>
-    <%= link_to("Edit", edit_guide_path(@guide), class: 'btn btn-primary') %> |
-    <%= link_to("Back", guides_path, class: 'btn') %>
-<% end %>
-<div class="destination-show">
-  <div class="tabbable"> <!-- Only required for left/right tabs -->
+<div class="guide-show">
+  <div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
     <ul class="nav nav-tabs">
-      <%= @guide.destination.name %>
+      <li><%= @guide.destination.name %></li>
       <li class="active"><a href="#tab1" data-toggle="tab">Overview</a></li>
       <li><a href="#tab2" data-toggle="tab">Getting there</a></li>
       <li><a href="#tab3" data-toggle="tab">What to do</a></li>
@@ -62,10 +12,11 @@
       <li><a href="#tab6" data-toggle="tab">Eat out</a></li>
       <li><a href="#tab7" data-toggle="tab">History</a></li>
       <li><a href="#tab8" data-toggle="tab">Properties</a></li>
+      <li class="pdf">Download this guide</li>
     </ul>
     <div class="tab-content">
       <% unless @guide.guide_image.nil? %>
-          <%= image_tag(@guide.guide_image.url, class: 'dest-img') %>
+          <%= image_tag(@guide.guide_image.url, class: 'guide-img') %>
       <% end %>
       <div class="tab-pane" id="tab1">
         <p class="lead">Overview of <%= @guide.destination.name %></p>
