@@ -2,14 +2,6 @@ class RentalsController < ApplicationController
   # GET /rentals
   # GET /rentals.json
   def index
-    if params[:q].present?
-      params[:q][:start_date] = Time.parse(params[:q][:start_date]).to_i if params[:q][:start_date].present?
-      params[:q][:end_date] = Time.parse(params[:q][:end_date]).to_i if params[:q][:end_date].present?
-      destination = Destination.where(id: params[:q][:destination_id]).first
-      params[:q][:destination_name] = destination.name.parameterize if destination
-      redirect_to filter_rentals_path(params[:q]) and return
-    end
-
     @photos = Photo.all
     if params[:destination_id]
       #@destinations = Destination.all
@@ -19,8 +11,15 @@ class RentalsController < ApplicationController
     elsif params[:bedrooms]
       @rentals = Rental.find_all_by_bedrooms(params[:bedrooms][:num])
     else
-      @rentals = Rental.all
+      @rentals = Rental
     end
+
+    @rentals = @rentals.where(destination_id: params[:destination_ids]) if params[:destination_ids].present?
+    @rentals = @rentals.where(sleeps: params[:sleeps_ids]) if params[:sleeps_ids].present?
+    @rentals = @rentals.where(bedrooms: params[:bedrooms_ids]) if params[:bedrooms_ids].present?
+    @rentals = @rentals.where(feature_id: params[:feature_ids]) if params[:feature_ids].present?
+
+    @rentals = @rentals.all
 
     @rentals_no_filter = Rental.all
 

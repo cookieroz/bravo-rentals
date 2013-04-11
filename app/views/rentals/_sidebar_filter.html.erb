@@ -13,24 +13,25 @@
 
     <label>Features:</label>
     <% Feature.all.each do |feature| %>
-        <% unless feature.name.blank? %>
-            <label class="checkbox">
-              <input type="checkbox"> <%= feature.name  %>
-            </label>
-        <% end %>
+      <% unless feature.name.blank? %>
+        <label class="checkbox">
+          <%= check_box_tag "feature_ids[]", feature.id, params[:feature_ids] && params[:feature_ids].include?(feature.id.to_s) %> <%= feature.name  %>
+        </label>
+      <% end %>
     <% end %>
 
     <label>Occupancy:</label>
     <% Rental.order(:sleeps).pluck(:sleeps).uniq.each do |sleeps| %>
-        <label class="checkbox">
-          <%= check_box_tag "sleeps[]", sleeps %> <%= sleeps  %>
-        </label>
+      <label class="checkbox">
+        <%= check_box_tag "sleeps_ids[]", sleeps, params[:sleeps_ids] && params[:sleeps_ids].include?(sleeps.to_s) %> <%= sleeps  %>
+      </label>
     <% end %>
+
     <label>Bedrooms:</label>
     <% Rental.order(:bedrooms).pluck(:bedrooms).uniq.each do |bedrooms| %>
-        <label class="checkbox">
-          <%= check_box_tag "bedrooms[]", bedrooms %> <%= bedrooms  %>
-        </label>
+      <label class="checkbox">
+        <%= check_box_tag "bedrooms_ids[]", bedrooms, params[:bedrooms_ids] && params[:bedrooms_ids].include?(bedrooms.to_s) %> <%= bedrooms  %>
+      </label>
     <% end %>
 
     <label>Price:</label>

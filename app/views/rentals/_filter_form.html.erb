@@ -15,18 +15,6 @@
                   options_from_collection_for_select(Destination.order(:name).all, :id, :name, params[:destination_id]),
                   { :prompt => 'select town' }) %>
   </div>
-    <div class="input-append pull-left">
-      <span class="add-on"><i class="icon-calendar"></i></span>
-      <%= text_field_tag "q[start_date]", params[:start_date],
-                         "data-behaviour" => "datepicker",
-                         placeholder: "Check-in" %>
-    </div>
-    <div class="input-append pull-left">
-      <span class="add-on"><i class="icon-calendar"></i></span>
-      <%= text_field_tag "q[end_date]", params[:end_date],
-                         "data-behaviour" => "datepicker",
-                         placeholder: "Check-out" %>
-    </div>
   <div class="span1">
     <%= submit_tag "Search", class: "btn btn-info" %>
   </div>
