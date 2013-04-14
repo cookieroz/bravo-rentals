@@ -18,8 +18,8 @@ test:
 
 production:
   adapter: postgresql
-  database: bravo_rental_prod
+  database: bravo_rentals_prod
   #host: localhost
   #  pool: 5
-  #  username: grandesvillas
-  #  password: villas**
+  #  username: bvr
+  #  password: rentals**
