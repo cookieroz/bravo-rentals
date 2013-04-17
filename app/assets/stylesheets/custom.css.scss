@@ -102,6 +102,7 @@ header {
 /* Home page styles */
 
 .rental-home-top {
+  background: #f8f7f5;
   border: 1px solid #000000;
   margin-left: 10px;
   padding: 5px;
@@ -109,7 +110,7 @@ header {
     width: 238px;
   }
   .rental-home-map {
-    background: #ffffff image-url('map.png') no-repeat right top;
+    background: transparent image-url('map.png') no-repeat right top;
     height: 104px;
     margin: -10px auto 0 auto;
     text-align: center;
@@ -119,19 +120,30 @@ header {
     }
   }
   .rental-home-filter {
-    background: #ffffff;
-    border: none;
-    margin: 10px 0 0 0;
-    padding: 0;
+    background: #f8eabb;
+    border: #928469 3px solid;
+    margin: 0 auto;
+    padding: 7px;
     position: relative;
-    width: 226px;
+    width: 215px;
     z-index: 100;
     form {
+      margin: 0 auto;
       position: relative;
+      width: 100%;
+      p {
+       margin: 0;
+      }
+      small {
+        color: $bvrBlue;
+      }
       select {
+        background: #fcfaed;
+        border: #333 1px solid;
         height: 24px;
+        margin-bottom: 5px;
         padding: 0;
-        width: 234px;
+        width: 210px;
       }
       select.rental-select {
         border-color: #000000;
@@ -142,15 +154,6 @@ header {
       .input-append {
         margin-bottom: 10px;
         *display: inline;
-      }
-      .add-on {
-        margin-bottom: -30px;
-        margin-left: 0;
-        position: relative;
-        z-index: 200;
-      }
-      #start_date, #end_date {
-        width: 70px;
       }
     }
     .home-search-btn {
@@ -198,6 +201,9 @@ header {
     border-radius: 8px;
     margin: 10px 0 10px 0;
     padding: 10px;
+    a {
+      color: $bvrBlue;
+    }
     .thumbnails {
       padding-left: 10px;
       li {

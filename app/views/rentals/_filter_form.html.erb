@@ -1,21 +1,26 @@
 <%= form_tag rentals_path, method: :get do |f| %>
-  <div class="span6 no-left-margin">
+  <p>Where would you like to go?</p>
+  <div class="span2 no-left-margin">
+    <%= select_tag(
+                "q[destination_id]",
+                options_from_collection_for_select(Destination.order(:name).all, :id, :name, params[:destination_id]),
+                { :prompt => 'Select Destination' }) %>
+
+  <small>More options</small>
     <%= select_tag(
                   "q[sleeps]",
                   options_for_select(%w[+2 +4 +6 +8 +10].each_with_index.map {|name, index| [name, name.to_i]}, params[:sleeps]),
-                  { prompt: 'select sleep' }
+                  { prompt: 'Sleeps:' }
           ) %>
     <%= select_tag(
                   "q[bedrooms]",
                   options_for_select(%w[1 2 3 4 5 +6].each_with_index.map {|name, index| [name, name.to_i]}, selected: params[:bedrooms]),
-                  { :prompt => 'select bed' }
+                  { :prompt => 'Bedrooms:' }
           ) %>
-    <%= select_tag(
-                  "q[destination_id]",
-                  options_from_collection_for_select(Destination.order(:name).all, :id, :name, params[:destination_id]),
-                  { :prompt => 'select town' }) %>
   </div>
-  <div class="span1">
-    <%= submit_tag "Search", class: "btn btn-info" %>
+  <div class="clear"></div>
+  <div class="home-search-btn">
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   </div>
+  <div class="clear"></div>
 <% end %>
