@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @rentals = Rental.scoped.limit(4).order("RANDOM()")
-    @destinations = Destination.scoped.limit(1).order("id DESC")
+    @guides = Guide.scoped.limit(1).order("id DESC")
   end
 
   def contact

@@ -21,6 +21,14 @@
       </li>
       <li class="divider-vertical"></li>
       <li>
+        <%= link_to("rentals", rentals_path, class:"#{'active' if current_page?(rentals_path)}") %>
+      </li>
+      <li class="divider-vertical"></li>
+      <li>
+        <%= link_to("guides", guides_path, class:"#{'active' if current_page?(guides_path)}") %>
+      </li>
+      <li class="divider-vertical"></li>
+      <li>
         <%= link_to("about", about_path, class:"#{'active' if current_page?(about_path)}") %>
       </li>
       <li class="divider-vertical"></li>
