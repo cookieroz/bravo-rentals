@@ -17,7 +17,7 @@ class RentalsController < ApplicationController
     @rentals = @rentals.where(destination_id: params[:destination_ids]) if params[:destination_ids].present?
     @rentals = @rentals.where(sleeps: params[:sleeps_ids]) if params[:sleeps_ids].present?
     @rentals = @rentals.where(bedrooms: params[:bedrooms_ids]) if params[:bedrooms_ids].present?
-    @rentals = @rentals.where(feature_id: params[:feature_ids]) if params[:feature_ids].present?
+    @rentals = @rentals.joins(:features).where("features.id" => params[:feature_ids]) if params[:feature_ids].present?
 
     @rentals = @rentals.all
 
