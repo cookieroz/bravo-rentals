@@ -35,9 +35,12 @@
             </div>
             <div class="span3 zebra-index no-left-margin">
               <p><%= raw truncate(strip_tags(destination.content), :length => 200) %></p>
-              <%= link_to 'Show', destination %> |
-              <%= link_to 'Edit', edit_destination_path(destination) %> |
-              <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Show', destination %>
+              <% if current_user %> |
+                <%= link_to 'Edit', edit_destination_path(destination) %> |
+                <%= link_to 'Destroy', destination, method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
+              <% end %>
             </div>
           </div>
           <div class="span10 no-left-margin">

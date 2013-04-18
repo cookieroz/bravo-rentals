@@ -3,11 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  $("#rental-slideshow").cycle
-  fx: "fade"
-  timeout: 5000
-  speed:   3000
-  pager: '#banner'
+  $('#rental-slideshow').cycle
+    fx: "fade"
+    timeout: 5000
+    speed:   3000
+    pager: '#banner'
 
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
