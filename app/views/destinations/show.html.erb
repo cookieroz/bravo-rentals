@@ -5,11 +5,24 @@
     <%= link_to("Back", destinations_path, class: 'btn') %>
 <% end %>
 <div class="destination-show">
+  <!-- To only load map when tab is clicked -->
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      //hide the empty container
+      $(".map_container").hide();
+      $("#mapshow").click(function(){
+        $.getJSON('/destinations', function(json){
+          $(".map_container").show();
+            Gmaps.loadMaps();
+        })
+      })
+    });
+  </script>
   <div class="tabbable"> <!-- Only required for left/right tabs -->
     <ul class="nav nav-tabs">
       <li class="active"><a href="#tab1" data-toggle="tab">Vaction Rentals in
         <%= @destination.name %></a></li>
-      <li><a href="#tab2" data-toggle="tab">Local Info</a></li>
+      <li id="mapshow"><a href="#tab2" data-toggle="tab">Local Info</a></li>
       <li><a href="#tab3" data-toggle="tab">What to do in <%= @destination.name %></a></li>
       <li><a href="#tab4" data-toggle="tab">Airport</a></li>
       <li><a href="#tab5" data-toggle="tab">Rent a Car in <%= @destination.name %></a></li>
@@ -59,7 +72,8 @@
                         :map_options => { :auto_adjust => true, # :auto_adjust map to center on location
                                           :auto_zoom => false, 	# :auto_zoom defaults to full zoom in, set to false to utilize :zoom
                                           :type => "HYBRID",   # HYBRID, ROADMAP, SATELLITE, TERRAIN
-                                          :zoom => 13, }		# :zoom 0 is fully zoomed out (world view), 21 is fully zoomed in (street view)
+                        },
+                :last_map => false
                 ) %>
           </div>
         </div>
