@@ -18,7 +18,8 @@
       <%= link_to pg_search_document.searchable do %>
         <%= highlight(pg_search_document.searchable.name, params[:q]) %>
       <% end %>
-      <%= truncate_html(highlight(pg_search_document.searchable.content, params[:q]), length: 140) %>
+      <%= truncate_html(highlight(pg_search_document.searchable.content, params[:q]),
+                        length: 140) %>
     </li>
   <% end %>
 </ul>
