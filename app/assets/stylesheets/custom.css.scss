@@ -692,7 +692,16 @@ header {
   }
 }
 
-
+/* Search results */
+.search-results {
+  li {
+    margin-bottom: 15px;
+    a {
+      color: $bvrBlue;
+      font-size: 16px;
+    }
+  }
+}
 
 /* footer */
 #push {

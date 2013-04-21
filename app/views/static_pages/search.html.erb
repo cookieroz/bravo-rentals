@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<ul>
+<ul class="unstyled search-results">
   <%= @pg_search_documents.find_each do |pg_search_document| %>
     <li>
       <%= link_to pg_search_document.searchable do %>
