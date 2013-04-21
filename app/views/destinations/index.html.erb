@@ -3,26 +3,27 @@
 <div class="dest-index">
   <div class="row">
     <div class="span2">
-      <form class="destination-index-form">
-        <fieldset>
-          <legend>Filter Locations</legend>
-          <label>Location:</label>
-          <%= form_tag(destinations_path,
-                       :method => :get) do %>
-              <%= select_tag(:name,
-                             options_from_collection_for_select(Destination.all, :name, :name)) %>
-              <%= submit_tag %>
-          <% end %>
-          <% @destinations.each do |destination| %>
+      <div class="destination-index-form">
+        <legend>Filter Locations</legend>
+        <label>Location:</label>
+        <%= form_tag(destinations_path,
+                     :method => :get) do %>
+            <%= select_tag(:name,
+                           options_from_collection_for_select(Destination.all, :name, :name)) %>
+            <%= submit_tag %>
+        <% end %>
+          <!--
+          <fieldset>
+          <%# @destinations.each do |destination| %>
               <label class="checkbox">
-                <input type="checkbox"> <%= destination.name  %>
+                <input type="checkbox"> <%#= destination.name  %>
               </label>
-          <% end %>
+          <%# end %>
           <div class="center">
             <button type="submit" class="btn">Submit</button>
           </div>
-        </fieldset>
-      </form>
+        </fieldset>-->
+      </div>
     </div>
     <div class="span10">
       <% @destinations.each do |destination| %>
