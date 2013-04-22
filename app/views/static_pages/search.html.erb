@@ -16,9 +16,9 @@
   <%= @pg_search_documents.find_each do |pg_search_document| %>
     <li>
       <%= link_to pg_search_document.searchable do %>
-        <%= highlight(pg_search_document.searchable.name, params[:q]) %>
+        <%= highlight(pg_search_document.searchable.name, params[:q].split(/[,\s]/)) %>
       <% end %>
-      <%= truncate_html(highlight(pg_search_document.searchable.content, params[:q]),
+      <%= truncate_html(highlight(pg_search_document.searchable.content, params[:q].split(/[,\s]/)),
                         length: 140) %>
     </li>
   <% end %>
