@@ -628,6 +628,15 @@ header {
     clear: right;
     margin-left: 0;
     padding: 5px;
+    .find-us {
+      border-bottom: 1px solid #cccccc;
+      font-weight: bold;
+      margin: 15px 0 0 0;
+    }
+    .lead {
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 0;
+    }
     .phone-num {
       font-size: 22px;
       padding: 5px 0;
