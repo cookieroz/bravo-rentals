@@ -2,8 +2,22 @@
 
 <div class="row contact-us">
   <div class="span9">
-    <div class="span4 contact-mobile">
-      <%= image_tag('phone.jpg') %>
+    <div class="span4 no-left-margin">
+      <div class="contact-mobile">
+        <p class="lead">Call us</p>
+        <div class="phone-num">
+          <%= image_tag('phone.jpg') %> 1-800-452-7896
+        </div>
+        <div class="phone-num">
+          <%= image_tag('whatsapp-icon.png') %> 1-415-452-7896
+        </div>
+        <div class="phone-num">
+          <%= image_tag('skype-small.png') %> BravoVacationRentals
+        </div>
+        <div class="phone-num">
+          <%= image_tag('email-icon.png') %> <small>rentals@bravovacationrentals.com</small>
+        </div>
+      </div>
     </div>
     <div class="span5 contact-us-form">
         <%= render 'messages/new' %>
@@ -12,7 +26,7 @@
     <div class="socialmedia">
       <h3>Find us on</h3>
       <div class="social-box">
-        youtube, social media
+        <%= image_tag('youtube.png') %> <%= image_tag('twitter.png') %>
       </div>
     </div>
     <div class="faq-contact">

@@ -1,5 +1,5 @@
 <%= simple_form_for @destination,
-                    :html => { :class => 'form-horizontal' } do |f| %>
+                    :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs control-group">
@@ -17,10 +17,11 @@
                   :input_html => { :toolbar => 'Full' } %>
     </div>
 
-    <% @destination.build_dest_image %>
     <%= f.simple_fields_for :dest_image do |ff| %>
         <%= ff.file_field :image, class: 'controls' %>
+        <%= ff.hidden_field :image_cache %>
     <% end %>
+    <%#= image_tag(@destination.dest_image_url) if @destination.dest_image_url? %>
 
     <div class="form-actions">
       <%= f.button :submit %>

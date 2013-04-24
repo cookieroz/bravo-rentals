@@ -1,14 +1,5 @@
 <div class="row">
-  <div class="rental-home-top">
-    <div class="span3 no-left-margin">
-      <div class="rental-home-map">
-        <p class="lead">View Map</p>
-      </div>
-      <div class="rental-home-filter">
-        <%= render "rentals/filter_form" %>
-      </div>
-    </div>
-    <div class="span9 no-left-margin">
+  <div class="rental-home-top span12">
       <div id="home-slideshow" class="pics">
         <%= link_to image_tag("rental-home-pic.jpg"), "#" %>
         <%= link_to image_tag("homepic2.jpg"), "#" %>
@@ -16,11 +7,17 @@
         <%= link_to image_tag("bvr-24_5_6_tonemapped.jpg"), "#" %>
         <%= link_to image_tag("bvr-10-2_22_23_tonemapped.jpg"), "#" %>
       </div>
+    <div class="home-filter-box">
+      <div class="rental-home-map">
+        <p class="lead">View Map</p>
+      </div>
+      <div class="rental-home-filter">
+        <%= render "rentals/filter_form" %>
+      </div>
     </div>
-    <div class="clear"></div>
   </div>
 </div>
-
+<div class="clear"></div>
 <div class="rental-home-row-2 row">
   <div class="span7">
     <div class="top-destinations-home">

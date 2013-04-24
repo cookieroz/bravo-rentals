@@ -2,6 +2,7 @@ class Destination < ActiveRecord::Base
   attr_accessible :airport, :content, :latitude, :longitude, :name, :rentcar, :todo,
                   :weather, :address, :rentals_attributes, :guides_attributes,
                   :dest_image_attributes
+  attr_accessor :image, :file
 
   validates :name,  :presence => true
 

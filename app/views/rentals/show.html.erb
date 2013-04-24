@@ -74,12 +74,17 @@
               <%= f.submit "Ask", class: "btn btn-info" %>
             </div>
         <% end %>
+        <div class="whatsapp-rental">
+          <%= image_tag('whatsapp-icon.png') %> <strong>1-415-452-7896</strong>
+          <p>Or send us a whatsapp message</p>
+        </div>
       </div>
       <div class="more-rentals">
         <p class="lead">More Vacation Rentals</p>
         <ul class="thumbnails">
           <% unless @rentals.nil? %>
               <% @rentals.each do |rental| %>
+                <% if rental != @rental %>
                   <li class="span3">
                     <div class="thumbnail">
                       <% unless rental.photos.first.nil? %>
@@ -92,6 +97,7 @@
                       </p>
                     </div>
                   </li>
+                <% end %>
               <% end %>
           <% end %>
         </ul>

@@ -35,6 +35,7 @@ class DestinationsController < ApplicationController
   # GET /destinations/new.json
   def new
     @destination = Destination.new
+    @destination.build_dest_image
 
     respond_to do |format|
       format.html # _new.html.erb
@@ -45,6 +46,7 @@ class DestinationsController < ApplicationController
   # GET /destinations/1/edit
   def edit
     @destination = Destination.find(params[:id])
+    @destination.build_dest_image
   end
 
   # POST /destinations
