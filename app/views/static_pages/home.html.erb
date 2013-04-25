@@ -56,32 +56,37 @@
       </ul>
     </div>
   </div>
-  <div class="span12">
+</div>
+<div class="row">
+  <div class="span7 no-left-margin">
     <div class="featured-rentals">
-      <p class="lead">Featured Properties</p>
+      <p class="lead">Featured Vacation Rentals</p>
       <ul class="thumbnails">
         <% unless @rentals.nil? %>
-          <% @rentals.each do |rental| %>
-            <li class="span3 left-5-margin">
-              <div class="thumbnail">
-                <% unless rental.photos.first.nil? %>
-                  <%= link_to image_tag(rental.photos.first.url), rental %>
-                <% end %>
-                <p><%= link_to rental.name, rental  %></p>
-                <div class="destination-show-link">
-                  <ul class="unstyled">
-                    <li>Sleeps: <%= rental.sleeps %></li>
-                    <li>Location: <%= link_to rental.destination.name,
-                                              destination_path(rental.destination.id)  %></li>
-                    <li>Bedrooms: <%= rental.bedrooms %></li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-          <% end %>
+            <% @rentals.each do |rental| %>
+                <li class="left-5-margin">
+                  <div class="thumbnail">
+                    <% unless rental.photos.first.nil? %>
+                        <%= link_to image_tag(rental.photos.first.url), rental %>
+                    <% end %>
+                    <div class="home-fr-info">
+                      <p><%= link_to truncate(rental.name, :length => 20), rental  %></p>
+                      <ul class="unstyled">
+                        <li class="pull-left">Sleeps: <%= rental.sleeps %></li>
+                        <li class="pull-left"><span class="left-5-margin right-5-margin">
+                          Bedrooms: <%= rental.bedrooms %></span></li>
+                        <li class="clear-fp">Location: <%= link_to rental.destination.name,
+                                                                destination_path(rental.destination.id)  %></li>
+                      </ul>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                </li>
+            <% end %>
         <% end %>
       </ul>
     </div>
   </div>
+</div>
 </div>
 
