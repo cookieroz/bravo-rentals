@@ -58,7 +58,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="span7 no-left-margin">
+  <div class="span8 no-left-margin">
     <div class="featured-rentals">
       <p class="lead">Featured Vacation Rentals</p>
       <ul class="thumbnails">
@@ -70,7 +70,7 @@
                         <%= link_to image_tag(rental.photos.first.url), rental %>
                     <% end %>
                     <div class="home-fr-info">
-                      <p><%= link_to truncate(rental.name, :length => 20), rental  %></p>
+                      <p><%= link_to truncate(rental.name, :length => 28), rental  %></p>
                       <ul class="unstyled">
                         <li class="pull-left">Sleeps: <%= rental.sleeps %></li>
                         <li class="pull-left"><span class="left-5-margin right-5-margin">
@@ -86,6 +86,11 @@
         <% end %>
       </ul>
     </div>
+  </div>
+  <div class="span4 shout-out">
+    <h2>Find out how Bravo Vacation Villas works</h2>
+    <iframe width="280" height="158" src="http://www.youtube.com/embed/SaOFuW011G8?rel=0"
+            frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
 </div>

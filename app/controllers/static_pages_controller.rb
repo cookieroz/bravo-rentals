@@ -1,5 +1,10 @@
 class StaticPagesController < ApplicationController
   def about
+    if params[:name]
+      @destinations = Destination.find_all_by_name(params[:name])
+    else
+      @destinations = Destination.all
+    end
   end
 
   def home
