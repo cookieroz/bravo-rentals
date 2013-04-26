@@ -26,9 +26,11 @@ $bvrBlue: #0989d4;
 
 $captionBlue: #015368;
 
-$lightContactBlue :#F0F8FF;
+$lightContactBlue: #F0F8FF;
 
-$brightAboutYellow : #fed585;
+$brightAboutYellow: #fed585;
+
+$darkChoc: #533800;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -324,7 +326,6 @@ header {
   padding: 10px;
   text-align: center;
   h2 {
-    color: $bvrBlue;
     line-height: 28px;
     padding: 5px;
     text-shadow:
@@ -332,6 +333,13 @@ header {
       1px -1px 0 #fff,
         -1px 1px 0 #fff,
       1px 1px 0 #fff;
+    a {
+      color: $bvrBlue;
+      &:hover {
+        color: $darkChoc;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -860,7 +868,7 @@ header {
           text-align: center;
           width: 220px;
           label {
-            color: #533800;
+            color: $darkChoc;
             font-size: 18px;
             font-weight: lighter;
             margin: 0 0 3px 0;
