@@ -435,16 +435,24 @@ header {
     margin-bottom: 5px;
     padding-top: 15px;
     a {
-      color: #000000;
+      color: $bvrBlue;
       text-decoration: none;
       &:hover {
         color: #696969;
       }
     }
   }
-  .span7 img {
-    height: 200px;
-    width: 700px;
+  a {
+    color: $bvrBlue;
+  }
+  .span7 {
+    border-bottom: 1px solid $bvrBlue;
+    border-left: 1px solid $bvrBlue;
+    border-top: 1px solid $bvrBlue;
+    img {
+      height: 200px;
+      width: 700px;
+    }
   }
   .destination-show-link {
     p.features-destinations {
@@ -454,17 +462,25 @@ header {
     }
   }
   .zebra-index {
-    background: #000000;
-    color: #ffffff;
+    background: #eee;
+    border-bottom: 1px solid $bvrBlue;
+    border-right: 1px solid $bvrBlue;
+    border-top: 1px solid $bvrBlue;
+    color: #333;
     height: 190px;
     padding: 5px;
   }
   .zebra-even {
-    background: #ffffff;
-    color: #000000;
+    background: $brightAboutYellow;
+    color: $darkChoc;
+  }
+  .thumbnails {
+    li {
+      background: #ffffff;
+    }
   }
   .thumbnail {
-    border-color: #000000;
+    border-color: $bvrBlue;
     border-radius: 0;
     padding: 0;
     p {
@@ -476,21 +492,32 @@ header {
     .unstyled {
       padding-left: 5px;
     }
+    img {
+      height: 103px;
+      width: 138px;
+    }
+  }
+  p.span10 {
+    margin-bottom: 0;
+  }
+  h5 {
+    margin: 5px 0 0 0;
   }
   .destination-index-form {
-    border: 2px solid #000000;
-    border-radius: 3px;
+    background: #f7f7f7;
+    border: 1px solid #888888;
     margin-top: 15px;
-    padding: 3px;
+    padding: 5px;
+    text-align: center;
     select {
-      border-color: #000000;
+      border-color: #888888;
       border-radius: 2px;
-      color: #000000;
+      color: #888;
       font-size: 12px;
-      height: 20px;
+      height: 30px;
       line-height: 12px;
-      padding: 0;
-      width: 130px;
+      padding: 5px;
+      width: 118px;
     }
     legend {
       border: none;
@@ -503,8 +530,19 @@ header {
       font-weight: bolder;
       margin: 0;
     }
-    label.checkbox {
-      font-weight: normal;
+    fieldset {
+      legend {
+        margin-bottom: -10px;
+      }
+      label {
+        margin-top: 10px;
+        text-align: left;
+      }
+      label.checkbox {
+        font-weight: normal;
+        margin-top: 0;
+        text-align: left;
+      }
     }
   }
 }

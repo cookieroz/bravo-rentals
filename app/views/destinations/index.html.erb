@@ -4,13 +4,12 @@
   <div class="row">
     <div class="span2">
       <div class="destination-index-form">
-        <legend>Filter Locations</legend>
-        <label>Location:</label>
+        <legend>Filter Destinations</legend>
         <%= form_tag(destinations_path,
                      :method => :get) do %>
             <%= select_tag(:name,
                            options_from_collection_for_select(Destination.all, :name, :name)) %>
-            <%= submit_tag %>
+            <%= submit_tag "Search", class: "btn" %>
         <% end %>
           <!--
           <fieldset>
@@ -36,7 +35,7 @@
             </div>
             <div class="span3 zebra-index no-left-margin">
               <p><%= raw truncate(strip_tags(destination.content), :length => 200) %></p>
-              <%= link_to 'Show', destination %>
+              <%= link_to "Discover more about #{destination.name}", destination %>
               <% if current_user %> |
                 <%= link_to 'Edit', edit_destination_path(destination) %> |
                 <%= link_to 'Destroy', destination, method: :delete,
@@ -51,7 +50,7 @@
                   <li class="span2 zebra">
                     <div class="thumbnail">
                       <% unless rental.photos.first.nil? %>
-                          <%= link_to image_tag(rental.photos.first.url), rental %>
+                          <%= link_to image_tag(rental.photos.first.url(:thumb)), rental %>
                       <% end %>
                       <p><%= link_to rental.name, rental %></p>
                       <div class="destination-show-link">

@@ -23,7 +23,7 @@
           </div>
           <div class="span3 zebra-index no-left-margin">
             <p><%= raw truncate(strip_tags(rental.content), :length => 200) %></p>
-            <%= link_to 'Show', rental %>
+            <%= link_to 'View Vacation Rental', rental %>
             <% if current_user %> |
               <%= link_to 'Edit', edit_rental_path(rental) %> |
               <%= link_to 'Destroy', rental, method: :delete, data:
