@@ -1,25 +1,171 @@
 <% provide(:title, "Owners") %>
 
-<div class="page-header owner-header">
-  <h1>Our Advice - Owners</h1>
-</div>
-
-<div class="row owners">
-  <div class="span3">
-    finger picture here
+<div class="owners-page">
+  <p class="lead owner-header">Owners</p>
+  <div class="row">
+    <div class="span8 owners-intro">
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+      classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
+      professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+      consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+      literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
+      of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+      This book is a treatise on the theory of ethics, very popular during the Renaissance. The first
+      line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged. It was
+        popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of
+        Lorem Ipsum.</p>
+    </div>
+    <div class="span4 owners-contact">
+      <%= render 'messages/new' %>
+    </div>
   </div>
-  <div class="span9">
-    <ul class="faq-owners unstyled">
-      <li>What requirements does my property need to meet?</li>
-      <li>Is it mandatory to have a pool?</li>
-      <li>How should I take photos of my property?</li>
-      <li>Should my property be insured?</li>
-      <li>How should I maintain my property?</li>
-      <li>When should I clean my property?</li>
-      <li>When should I clean my pool?</li>
-      <li>What type of furniture should my property have?</li>
-      <li>How should I deal with a client that has a problem?</li>
-      <li>How should I make successful check-ins/check-outs?</li>
-    </ul>
+  <div class="row">
+    <div class="span12 owners-invest">
+      invest logos here
+    </div>
+  </div>
+  <div class="row">
+    <div class="span2 owners-icon">
+       icon image here
+    </div>
+    <div class="span10 owners-faq-links">
+      links to faq here
+      <ul class="faq-owners unstyled">
+        <li><a href="#q1">What requirements does my property need to meet?</a></li>
+        <li><a href="#q2">Is it mandatory to have a pool?</a></li>
+        <li><a href="#q3">How should I take photos of my property?</a></li>
+        <li><a href="#q4">Should my property be insured?</a></li>
+        <li><a href="#q5">How should I maintain my property?</a></li>
+        <li><a href="#q6">When should I clean my property?</a></li>
+        <li><a href="#q7">When should I clean my pool?</a></li>
+        <li><a href="#q8">What type of furniture should my property have?</a></li>
+        <li><a href="#q9">How should I deal with a client that has a problem?</a></li>
+        <li><a href="#q10">How should I make successful check-ins/check-outs?</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12 owners-faq">
+      faq content here
+      <ul class="faq-owners unstyled">
+        <li id="q1">
+          What requirements does my property need to meet?
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pellentesque, diam
+            pretium rutrum condimentum, mi elit hendrerit libero, quis rhoncus dolor arcu non nisi.
+            Etiam ornare elit suscipit sapien viverra vestibulum eleifend lectus rhoncus. Sed ornare,
+            augue vel bibendum cursus, ligula lectus aliquet enim, placerat imperdiet dolor diam ac
+            sem. Phasellus ac odio vitae magna interdum euismod. Sed cursus placerat ante. Nulla
+            eleifend blandit dui, ut elementum arcu volutpat ut. Sed tristique congue pharetra.</p>
+        </li>
+        <li id="q2">
+          Is it mandatory to have a pool?
+          <p>Suspendisse iaculis tincidunt lacus vitae lacinia. Morbi suscipit est et leo varius
+            molestie. Integer commodo libero id lorem vestibulum consequat. Cras a felis turpis. In
+            bibendum accumsan nulla, id congue risus auctor id. Aliquam sit amet lectus magna. Nunc
+            luctus, dolor ut interdum luctus, justo orci pharetra orci, at convallis nibh nisi non
+            purus. Integer a risus eget nibh iaculis tincidunt sit amet eu nisl. Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Quisque blandit suscipit ligula, ut ultricies diam
+            imperdiet vitae. In hac habitasse platea dictumst.</p>
+        </li>
+        <li id="q3">
+          How should I take photos of my property?
+          <p>Proin facilisis vulputate eros, a elementum justo fermentum at. Donec et eros tellus, a
+            viverra mauris. Phasellus sit amet nunc sed nisl ultrices varius. Nunc metus metus,
+            euismod non feugiat in, fermentum et dolor. Integer id accumsan dolor. Curabitur nec
+            mattis risus. Proin tristique dictum nisi, in consequat sapien tincidunt at. Etiam et
+            risus lectus. Nam id ligula purus, ut suscipit orci. Mauris rhoncus interdum ipsum at
+            congue. Nulla tortor justo, interdum nec euismod sit amet, sollicitudin in purus. Sed
+            pellentesque commodo elit, et ultricies nibh feugiat a. Pellentesque habitant morbi
+            tristique senectus et netus et malesuada fames ac turpis egestas</p>
+        </li>
+        <li id="q4">
+          Should my property be insured?
+          <p>Mauris vel lacus id risus facilisis tristique id volutpat nisi. Integer auctor massa id
+            ante tempus ac feugiat mi blandit. Nunc venenatis, dolor at dapibus gravida, neque enim
+            volutpat orci, vitae suscipit nisl nibh eget lacus. Nulla interdum erat eu nunc posuere
+            hendrerit. Aenean eu eros ipsum, nec fermentum velit. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi
+            tristique senectus et netus et malesuada fames ac turpis egestas. Sed non enim nisi, nec
+            consectetur nibh. Ut id sem lectus, ut hendrerit tortor. Pellentesque ultrices condimentum
+            lectus, vel imperdiet tortor aliquet in.</p>
+        </li>
+        <li id="q5">
+          How should I maintain my property?
+          <p>Sed ac augue dolor, eget viverra nunc. Sed nulla neque, condimentum in bibendum eu,
+            elementum vel magna. Cras lacus tortor, pulvinar vitae tincidunt non, rhoncus id mi.
+            Suspendisse egestas purus quis massa varius congue. Duis at pharetra orci. Nulla
+            ullamcorper quam et est placerat ornare. Quisque feugiat volutpat est nec rutrum. Maecenas
+            egestas vulputate felis et cursus. Fusce in urna et ante euismod malesuada sed sit amet
+            erat. Phasellus sagittis, enim vulputate venenatis vestibulum, orci lectus interdum urna,
+            et dictum nunc velit nec est. Mauris semper scelerisque ipsum eget ultrices. Vivamus
+            ornare fringilla ante, eu placerat nulla aliquet id. Cum sociis natoque penatibus et
+            magnis dis parturient montes, nascetur ridiculus mus. Aliquam in luctus neque. Curabitur
+            ante mi, vehicula quis ullamcorper ac, dignissim in nisl. Nullam tellus libero, tempor
+            fermentum porta id, ultricies nec ligula.</p>
+        </li>
+        <li id="q6">
+          When should I clean my property?
+          <p>Praesent vestibulum convallis felis non condimentum. Proin ipsum nulla, molestie sed
+            ullamcorper dapibus, placerat vel dolor. Curabitur eu massa quis velit semper gravida.
+            Vestibulum blandit nisl et nulla fringilla posuere. Aenean ullamcorper quam et sapien
+            bibendum id auctor sapien aliquet. Fusce lacinia diam ac mi congue venenatis. Cras
+            elementum ante vestibulum justo luctus congue.</p>
+        </li>
+        <li id="q7">
+          When should I clean my pool?
+          <p>Aliquam faucibus placerat venenatis. Cras scelerisque, velit vel rhoncus dapibus, sem
+            arcu suscipit ligula, in porttitor dui dui tincidunt massa. Aliquam in magna leo, ut
+            condimentum quam. Sed ultricies, tellus ac rhoncus gravida, ante lorem vehicula sapien,
+            vitae commodo turpis augue eu eros. Vestibulum elementum posuere leo, id hendrerit nisl
+            posuere in. In hac habitasse platea dictumst. Ut sed magna est, nec scelerisque velit.
+            Nunc sit amet augue elementum dui interdum volutpat at nec felis. Aenean nisl tellus,
+            bibendum ut tincidunt sed, fermentum at arcu. Nulla facilisi. Nam tincidunt porta nulla,
+            id consequat nunc lacinia in. Nunc id ipsum quis purus egestas pellentesque eget eget
+            felis. Nulla ac mauris dolor. Suspendisse potenti. Nunc quis enim augue. Nullam sed sem
+            ligula.</p>
+        </li>
+        <li id="q8">
+          What type of furniture should my property have?
+          <p>Nam tincidunt, ipsum sit amet volutpat bibendum, ligula lorem pulvinar velit, vel
+            tincidunt odio tortor id dolor. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia Curae; Fusce nec magna lorem. Nulla facilisi. Maecenas molestie
+            magna vitae ligula sollicitudin consectetur luctus nibh congue. Suspendisse sit amet leo
+            et ligula pharetra lacinia sit amet eget nisi. Ut luctus eros id arcu ullamcorper posuere.
+            Etiam sagittis porttitor purus et suscipit.</p>
+        </li>
+        <li id="q9">
+          How should I deal with a client that has a problem?
+          <p>Donec ut tortor magna. Nam vel libero ut nisi blandit aliquet. Vestibulum scelerisque,
+            eros a placerat condimentum, tellus enim posuere erat, a adipiscing dolor justo at tellus.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+            Vivamus urna nulla, rhoncus sed dignissim non, tincidunt sit amet neque. Morbi sagittis,
+            nibh ut molestie feugiat, neque leo posuere quam, a lacinia dolor libero a mauris.
+            Curabitur facilisis diam nec nulla congue in luctus turpis consequat. Nulla eleifend diam
+            vitae magna venenatis et sodales purus elementum. Nunc dapibus, tortor ut lacinia interdum,
+            elit nunc scelerisque nibh, at aliquet ipsum odio condimentum sem. Cras risus tellus,
+            vulputate porta congue a, venenatis non risus. Mauris dapibus vulputate convallis. Nullam
+            accumsan commodo viverra. Curabitur commodo venenatis ligula ac auctor. Aliquam eros nisi,
+            egestas et condimentum ut, eleifend pulvinar tortor.</p>
+        </li>
+        <li id="q10">
+          How should I make successful check-ins/check-outs?
+          <p>Vestibulum eget ipsum libero. Nullam blandit sapien at urna varius auctor. Pellentesque
+            dui libero, faucibus nec imperdiet ac, tempus lacinia mauris. Donec nisi velit, tristique
+            vulputate fermentum et, convallis ac libero. Vestibulum est ante, vestibulum posuere
+            pulvinar a, adipiscing id massa. Proin at sem velit, tempor commodo augue. Mauris
+            tristique quam eu metus vehicula non sollicitudin urna sagittis. Sed vitae volutpat nunc.
+            Mauris tempus dictum orci ut porta. Suspendisse pulvinar ultrices tempor. Sed consectetur
+            adipiscing sem vitae vulputate. Sed urna enim, sodales nec congue eget, tempor ut diam. In
+            scelerisque feugiat venenatis. Vivamus pretium, nisi ac mattis pulvinar, nisi nisi
+            fringilla magna, et cursus metus tortor non erat. Maecenas vehicula dapibus consequat.
+            Vivamus id justo velit.</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

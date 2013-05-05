@@ -583,7 +583,92 @@ header {
 
 
 
-/* Villa Styles */
+/* Rental Styles */
+.rentals-index {
+  .rental-index-record {
+    border-bottom: 1px solid $bvrYellow;
+    margin-left: 0;
+    padding: 0 0 20px 4px;
+  }
+  .lead {
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 15px;
+    a {
+      color: $bvrBlue;
+      text-decoration: none;
+      &:hover {
+        color: #696969;
+      }
+    }
+  }
+  a {
+    color: $bvrBlue;
+  }
+
+  .span7 {
+    margin-left: 0;
+    img {
+      height: 200px;
+      width: 700px;
+    }
+  }
+  .zebra-index {
+    background: #eee;
+    color: #333;
+    height: 190px;
+    padding: 5px;
+    width: 220px;
+  }
+  .zebra-even {
+    background: $brightAboutYellow;
+    color: $darkChoc;
+  }
+  .destination-index-form {
+    background: #f7f7f7;
+    border: 1px solid #888888;
+    margin-top: 15px;
+    padding: 5px;
+    text-align: center;
+    select {
+      border-color: #888888;
+      border-radius: 2px;
+      color: #888;
+      font-size: 12px;
+      height: 30px;
+      line-height: 12px;
+      padding: 5px;
+      width: 118px;
+    }
+    legend {
+      border: none;
+      font-size: 16px;
+      margin: 0;
+      text-align: center;
+    }
+    label {
+      font-size: 12px;
+      font-weight: bolder;
+      margin: 0;
+    }
+    fieldset {
+      legend {
+        margin-bottom: -10px;
+      }
+      label {
+        margin-top: 10px;
+        text-align: left;
+      }
+      label.checkbox {
+        font-weight: normal;
+        margin-top: 0;
+        text-align: left;
+      }
+    }
+  }
+}
+
+
 .villa-show {
   .map_container {
     clear: both;
@@ -876,17 +961,57 @@ header {
 
 
 /* Owners Page */
-.owner-header {
-  border-bottom: 2px solid #000000;
-  h1 {
-    font-weight: lighter;
+.owners-page {
+  .owner-header {
+    border-bottom: 1px solid #dcdcdc;
   }
-}
-.owners {
-  .span9 {
-    .faq-owners {
+  .owners-intro {
+    background: #eee;
+    padding: 10px;
+    width: 600px;
+  }
+  .owners-contact {
+    background: $lightContactBlue;
+    form {
+      h3 {
+        text-align: center;
+      }
+      .control-group {
+        margin-bottom: 10px;
+        label {
+          padding-top: 0;
+          width: 80px;
+        }
+        .controls {
+          margin-left: 90px;
+          input {
+            height: 15px;
+            padding: 2px;
+            width: 170px;
+          }
+          textarea {
+            width: 165px;
+          }
+        }
+      }
+      .actions {
+        margin-top: 10px;
+      }
+    }
+  }
+  .owners-invest {
+    background: #eee;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .faq-owners {
+    color: $bvrBlue;
+    font-size: 1.1em;
+    p {
+      color: #ccc;
+    }
+    a {
       color: $bvrBlue;
-      font-size: 1.1em;
     }
   }
 }

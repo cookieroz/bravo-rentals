@@ -19,4 +19,8 @@ class StaticPagesController < ApplicationController
   def search
     @pg_search_documents = PgSearch.multisearch(params[:q]) #.select(ts_headline('english', "text", plainto_tsquery('"endpoints"'), 'MaxFragments=0, MinWords=5, MaxWords=9'))
   end
+
+  def owners
+    @message = Message.new
+  end
 end
