@@ -96,9 +96,15 @@ header {
         padding-right: 15px;
         a {
           color: #000000;
+          &:hover {
+            background: none;
+            color: $bvrBlue;
+            text-decoration: underline;
+          }
         }
         a.active {
-          background: #eeeeee;
+          color: $bvrBlue;
+          text-decoration: underline;
         }
       }
     }
@@ -158,6 +164,13 @@ header {
           color: #000000;
           font-size: 16px;
           line-height: 18px;
+        }
+        select#sleeps_gt, select#bedrooms_gt {
+          display: inline;
+          width: 100px;
+        }
+        select#bedrooms_gt {
+          margin: -58px 0 0 110px;
         }
         .input-append {
           margin-bottom: 10px;
