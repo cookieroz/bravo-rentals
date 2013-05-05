@@ -433,6 +433,7 @@ header {
 .dest-index {
   .lead {
     margin-bottom: 5px;
+    margin-left: 0;
     padding-top: 15px;
     a {
       color: $bvrBlue;
@@ -445,16 +446,40 @@ header {
   a {
     color: $bvrBlue;
   }
+  .dest-index-record-wrap {
+    border: 1px solid $bvrBlue;
+    clear: both;
+    margin: 0 auto;
+    overflow: hidden;
+  }
   .span7 {
     border-bottom: 1px solid $bvrBlue;
-    border-left: 1px solid $bvrBlue;
-    border-top: 1px solid $bvrBlue;
+    width: 548px;
     img {
       height: 200px;
       width: 700px;
     }
   }
   .destination-show-link {
+    background: transparent image-url('whiteopacity.png');
+    margin: -40px 0 0 25px;
+    padding: 5px;
+    position: relative;
+    ul {
+      clear: both;
+      color: 000;
+      font-size: 16px;
+      overflow: hidden;
+      li {
+        background: none;
+        display: inline;
+        padding: 0 10px;
+      }
+      li:first-child {
+        border-right: 1px solid #000;
+        margin-left: 0;
+      }
+    }
     p.features-destinations {
       clear: both;
       font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
@@ -464,24 +489,32 @@ header {
   .zebra-index {
     background: #eee;
     border-bottom: 1px solid $bvrBlue;
-    border-right: 1px solid $bvrBlue;
-    border-top: 1px solid $bvrBlue;
     color: #333;
     height: 190px;
     padding: 5px;
+    width: 220px;
   }
   .zebra-even {
     background: $brightAboutYellow;
     color: $darkChoc;
   }
   .thumbnails {
+    margin-bottom: 0;
+    padding: 0 5px 5px 5px;
     li {
       background: #ffffff;
+      margin-bottom: 10px;
+      margin-left: 5px;
+      width: 253px;
+    }
+    li:first-child {
+      margin-left: 20px;
     }
   }
   .thumbnail {
-    border-color: $bvrBlue;
+    border: none;
     border-radius: 0;
+    box-shadow: none;
     padding: 0;
     p {
       padding-left: 5px;
@@ -493,15 +526,15 @@ header {
       padding-left: 5px;
     }
     img {
-      height: 103px;
-      width: 138px;
+      height: 190px;
+      width: 255px;
     }
   }
   p.span10 {
     margin-bottom: 0;
   }
   h5 {
-    margin: 5px 0 0 0;
+    margin: 5px 0 0 5px;
   }
   .destination-index-form {
     background: #f7f7f7;
