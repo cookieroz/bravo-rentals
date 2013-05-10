@@ -16,8 +16,8 @@
       <%= f.input :weather, :as => :ckeditor,
                   :input_html => { :toolbar => 'Full' } %>
     </div>
-
-    <%= f.simple_fields_for :dest_image do |ff| %>
+	<% @destination.build_photo if !@destination.photo  %>
+    <%= f.simple_fields_for :photo do |ff| %>
         <%= ff.file_field :image, class: 'controls' %>
         <%= ff.hidden_field :image_cache %>
     <% end %>

@@ -29,7 +29,7 @@ group :assets do
   gem 'bootstrap-sass'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -42,6 +42,7 @@ group :development, :test do
   #gem 'capistrano', '2.13.5'
 end
 
+gem 'quiet_assets', :group => :development
 gem 'jquery-rails'
 
 group :test do

@@ -45,8 +45,7 @@ class DestinationsController < ApplicationController
 
   # GET /destinations/1/edit
   def edit
-    @destination = Destination.find(params[:id])
-    @destination.build_dest_image
+    @destination = Destination.find(params[:id])    
   end
 
   # POST /destinations
