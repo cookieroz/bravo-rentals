@@ -18,10 +18,17 @@
     </div>
 
     <%= f.simple_fields_for :dest_image do |ff| %>
-        <%= ff.file_field :image, class: 'controls' %>
-        <%= ff.hidden_field :image_cache %>
+        <%#= ff.file_field :image, class: 'controls' %>
+        <%#= ff.hidden_field :image_cache %>
+        <% if ff.object.dest_image? %>
+            <%= image_tag ff.object.image_url %>
+            <%= ff.file_field :image %>
+        <% else %>
+            <%= ff.file_field :image %>
+            <%= ff.hidden_field :image_cache %>
+        <% end %>
     <% end %>
-    <%#= image_tag(@destination.dest_image_url) if @destination.dest_image_url? %>
+    <%#= image_tag(@destination.dest_image_url) if @destination.image_url? %>
 
     <div class="form-actions">
       <%= f.button :submit %>
