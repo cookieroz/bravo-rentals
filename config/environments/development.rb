@@ -36,4 +36,7 @@ BravoRentals::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Make it false to see javascript queries in development.log 
+  config.quiet_assets = true
 end

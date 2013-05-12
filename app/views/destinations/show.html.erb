@@ -61,8 +61,8 @@
       <div class="tab-pane" id="tab2">
         <div class="row">
           <div class="span7">
-            <% unless @destination.dest_image.nil? %>
-                <%= image_tag(@destination.dest_image.url, class: 'dest-img') %>
+            <% unless @destination.photo.nil? %>
+                <%= image_tag(@destination.photo.url, class: 'dest-img') %>
             <% end %>
             <h1><%= @destination.name %></h1>
           </div>

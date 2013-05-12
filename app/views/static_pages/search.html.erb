@@ -18,8 +18,11 @@
       <%= link_to pg_search_document.searchable do %>
         <%= highlight(pg_search_document.searchable.name, params[:q].split(/[,\s]/)) %>
       <% end %>
-      <%= truncate_html(highlight(pg_search_document.searchable.content, params[:q].split(/[,\s]/)),
-                        length: 140) %>
+      <% if !pg_search_document.searchable_type.eql?("Guide") %>
+      	<%= truncate_html(highlight(pg_search_document.searchable.content, params[:q].split(/[,\s]/)), length: 140) %>
+      <% else %>
+      	<%= truncate_html(highlight(pg_search_document.searchable.overview, params[:q].split(/[,\s]/)), length: 140) %>
+      <% end %>      
     </li>
   <% end %>
 </ul>
