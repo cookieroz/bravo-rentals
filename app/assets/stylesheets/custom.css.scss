@@ -66,7 +66,7 @@ p, td {
   height: auto !important;
   height: 100%;
 /* Negative indent footer by it's height */
-  margin: 0 auto -100px;
+  margin: 0 auto -200px;
   min-height: 100%;
 }
 
@@ -1120,21 +1120,33 @@ header {
 
 /* footer */
 #push {
-  height: 100px;
+  height: 200px;
 }
 
 footer {
-  background: #fff;
-  border-top: 1px solid #000000;
-  height: 100px;
-  ul.nav-pills {
-    a{
-      color: #000000;
-      &:hover {
-        background-color: #000000;
-        color: #ffffff;
-      }
-    }
+  background: #EEEEEE;
+  height: 170px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  h4 {
+    color: #333;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  a {
+    color: $bvrBlue;
+  }
+  .span12 {
+    margin: 0 auto;
+    padding-top: 15px;
+    text-align: center;
+  }
+  .span4 {
+    border-right: 1px solid $bvrBlue;
+    margin-left: 19px;
+  }
+  .foot-sm {
+    border: none;
   }
 }
 

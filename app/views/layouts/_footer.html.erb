@@ -1,25 +1,37 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <nav>
-        <ul class="nav nav-pills pull-left">
+      <div class="span4">
+        <h4>About Bravo Vacation Rentals</h4>
+        <ul class="unstyled">
+          <li><%= link_to("About", about_path) %></li>
+          <li><%= link_to("Contact", contact_path) %></li>
+          <li><%= link_to("Owners", owners_path) %></li>
+        </ul>
+      </div>
+      <div class="span4">
+         <h4>Discover Bravo Vacation Rentals</h4>
+        <ul class="unstyled">
           <li><%= link_to("Destinations", destinations_path) %></li>
           <li><%= link_to("Rentals", rentals_path) %></li>
           <li><%= link_to("Guides", guides_path) %></li>
-          <li><%= link_to("Contact", contact_path) %></li>
-          <li><%= link_to("About", about_path) %></li>
-          <li><%= link_to("Owners", owners_path) %></li>
         </ul>
-      </nav>
-    </div>
-
-    <div class="row">
-      <small>
-        Use of this Web site constitutes acceptance of the BravoVacationRentals.com
-        Terms & Conditions and Privacy Policy.
+      </div>
+      <div class="span4 foot-sm">
+        <h4>Follow Bravo Vacation Rentals</h4>
+        <%= image_tag('youtube.png') %> <%= image_tag('twitter.png') %>
+      </div>
+      <div class="span12">
+        <small>
+          Use of this Web site constitutes acceptance of the
+          <%= link_to "BravoVacationRentals.com", root_path %>
+          <%= link_to "Terms & Conditions", "#" %> and <%= link_to "Privacy Policy", "#" %>.
+        </small>
         <br />
-        © Copyright 2013 - Present Bravo Vacation Rentals. All rights reserved.
-      </small>
+        <small>
+          © Copyright 2013 - Present Bravo Vacation Rentals. All rights reserved.
+        </small>
+      </div>
     </div>
   </div>
 </footer>
