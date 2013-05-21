@@ -25,6 +25,8 @@ class RentalsController < ApplicationController
 
     @rentals_no_filter = Rental.all
 
+    @json = @rentals.to_gmaps4rails
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @rentals }

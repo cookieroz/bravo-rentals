@@ -9,7 +9,9 @@
       </div>
     <div class="home-filter-box">
       <div class="rental-home-map">
-        <p class="lead">View Map</p>
+        <p class="lead">
+          <%= link_to "View Map", "rentals#rentals_map" %>
+        </p>
       </div>
       <div class="rental-home-filter">
         <%= render "rentals/filter_form" %>

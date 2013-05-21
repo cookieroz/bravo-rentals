@@ -132,6 +132,9 @@ header {
       width: 165px;
       .lead {
         padding-top: 30px;
+        a {
+          color: #000;
+        }
       }
     }
     .rental-home-filter {
@@ -604,6 +607,9 @@ header {
     margin-left: 0;
     padding: 0 0 20px 4px;
   }
+  small {
+    font-size: 14px;
+  }
   .lead {
     margin-bottom: 0;
     margin-left: 0;
@@ -677,6 +683,18 @@ header {
         font-weight: normal;
         margin-top: 0;
         text-align: left;
+      }
+    }
+  }
+  .map_container {
+    clear: both;
+    height: 200px;
+    margin: 0 0 15px 0;
+    width: 905px;
+    #map {
+      .gmaps4rails_map {
+        height: 200px;
+        width: 900px;
       }
     }
   }

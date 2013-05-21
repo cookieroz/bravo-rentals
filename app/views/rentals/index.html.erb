@@ -1,7 +1,7 @@
 <% provide(:title, "Vacation Rentals") %>
-<h1>All Vacation Rentals</h1>
 
 <div class="rentals-index">
+  <h1>All Vacation Rentals <small><%= link_to "View Map", "rentals#rentals_map" %></small></h1>
   <div class="row">
     <div class="span2">
       <%= render 'sidebar_filter' %>
@@ -34,6 +34,8 @@
       <% end %>
     </div>
   </div>
+  <p id="rentals_map" class="lead padtop15">Location of rentals:</p>
+  <%= gmaps(:markers => {:data => @json, :options => { :do_clustering => false}	}) %>
 </div>
 
 <br />
@@ -42,3 +44,5 @@
     <%= link_to 'New Rental', new_rental_path,
                 class: 'btn btn-warning btn-large' %>
 <% end %>
+
+<%= yield :scripts %>
