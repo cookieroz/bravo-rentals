@@ -125,13 +125,12 @@ header {
     width: 238px;
     z-index: 300;
     .rental-home-map {
-      background: transparent image-url('map.png') no-repeat right top;
+      background: #F2F3F4 image-url('map-icon.png') no-repeat left top;
       height: 104px;
-      margin: 30px auto 0 auto;
+      margin: 20px auto 0 auto;
       text-align: center;
-      width: 165px;
       .lead {
-        padding-top: 30px;
+        padding: 30px 0 0 90px;
         a {
           color: #000;
         }
@@ -140,7 +139,7 @@ header {
     .rental-home-filter {
       background: #F2F3F4;
       border: 1px solid #000;
-      margin: 0 auto;
+      margin: 30px auto 0 auto;
       padding: 7px;
       position: relative;
       width: 215px;
@@ -1148,6 +1147,7 @@ footer {
   padding: 10px;
   h4 {
     color: #333;
+    font-size: 16px;
     font-weight: lighter;
     text-transform: uppercase;
   }

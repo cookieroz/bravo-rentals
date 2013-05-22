@@ -45,7 +45,7 @@
             <div class="span10 no-left-margin">
               <h5>Featured Vacation Rentals in <%= link_to destination.name, destination  %></h5>
               <ul class="thumbnails">
-                <% destination.rentals.each do |rental| %>
+                <% destination.rentals.scoped.limit(3).order("RANDOM()").each do |rental| %>
                     <li>
                       <div class="thumbnail">
                         <% unless rental.photos.first.nil? %>
