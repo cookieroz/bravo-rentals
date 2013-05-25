@@ -125,7 +125,10 @@ header {
     width: 238px;
     z-index: 300;
     .rental-home-map {
-      background: #F2F3F4 image-url('map-icon.png') no-repeat left top;
+      background-color: #F2F3F4;
+      background-image: image-url('map-icon.png');
+      background-position: left middle;
+      background-repeat: no-repeat;
       height: 104px;
       margin: 20px auto 0 auto;
       text-align: center;
@@ -983,6 +986,14 @@ header {
     }
     .social-box {
       padding: 5px;
+      .unstyled {
+        li {
+          margin-bottom: 20px;
+          .lead {
+            margin-bottom: 1px;
+          }
+        }
+      }
     }
   }
   .faq-contact {
@@ -1039,7 +1050,7 @@ header {
     color: $bvrBlue;
     font-size: 1.1em;
     p {
-      color: #ccc;
+      color: #666;
     }
     a {
       color: $bvrBlue;
