@@ -127,13 +127,13 @@ header {
     .rental-home-map {
       background-color: #F2F3F4;
       background-image: image-url('map-icon.png');
-      background-position: left middle;
+      background-position: 3px 3px;
       background-repeat: no-repeat;
-      height: 104px;
+      height: 80px;
       margin: 20px auto 0 auto;
       text-align: center;
       .lead {
-        padding: 30px 0 0 90px;
+        padding: 27px 0 0 90px;
         a {
           color: #000;
         }
@@ -689,14 +689,16 @@ header {
     }
   }
   .map_container {
+    border: none;
     clear: both;
-    height: 200px;
-    margin: 0 0 15px 0;
-    width: 905px;
+    height: 300px;
+    margin: 15px 0 15px 0;
+    padding: 0;
+    width: 780px;
     #map {
       .gmaps4rails_map {
-        height: 200px;
-        width: 900px;
+        height: 400px;
+        width: 780px;
       }
     }
   }
@@ -1043,6 +1045,7 @@ header {
   }
   .owners-invest {
     background: #eee;
+    margin-bottom: 15px;
     margin-top: 20px;
     padding: 10px;
   }
@@ -1051,9 +1054,13 @@ header {
     font-size: 1.1em;
     p {
       color: #666;
+      padding-left: 10px;
     }
     a {
       color: $bvrBlue;
+      &:hover {
+        color: $bvrYellow;
+      }
     }
   }
 }

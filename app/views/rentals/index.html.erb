@@ -1,12 +1,14 @@
 <% provide(:title, "Vacation Rentals") %>
 
 <div class="rentals-index">
-  <h1>All Vacation Rentals <small><%= link_to "View Map", "rentals#rentals_map" %></small></h1>
+  <h1>All Vacation Rentals</h1>
   <div class="row">
     <div class="span2">
       <%= render 'sidebar_filter' %>
     </div>
-    <div class="span10">
+    <div id="rentals_map" class="span10">
+      <%= gmaps(:markers => {:data => @json, :options => { :do_clustering => false}	}) %>
+
       <% unless @rentals.any? %>
         <span>No matching rentals</span>
       <% end %>
@@ -34,8 +36,6 @@
       <% end %>
     </div>
   </div>
-  <p id="rentals_map" class="lead padtop15">Location of rentals:</p>
-  <%= gmaps(:markers => {:data => @json, :options => { :do_clustering => false}	}) %>
 </div>
 
 <br />
