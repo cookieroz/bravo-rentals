@@ -25,7 +25,10 @@ class RentalsController < ApplicationController
 
     @rentals_no_filter = Rental.all
 
-    @json = @rentals.to_gmaps4rails
+    @json = @rentals.to_gmaps4rails do |rental, marker|
+      marker.infowindow render_to_string(:partial => "/rentals/infowindow",
+                                         :locals => { :rental => rental})
+    end
 
     respond_to do |format|
       format.html # index.html.erb
