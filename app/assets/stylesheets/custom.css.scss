@@ -868,7 +868,22 @@ header {
 }
 
 /* Guides Styles */
-
+.guide-index {
+  .map_container {
+    border: none;
+    clear: both;
+    height: 400px;
+    margin: 15px 0 15px 0;
+    padding: 0;
+    width: 940px;
+    #map {
+      .gmaps4rails_map {
+        height: 400px;
+        width: 940px;
+      }
+    }
+  }
+}
 
 .guide-show {
   .guide-img {

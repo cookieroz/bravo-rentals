@@ -1,8 +1,9 @@
 <% provide(:title, "Travel Guides") %>
 
-<div class="dest-index">
+<div class="guide-index">
   <div class="row">
     <div class="span12">
+      <%= gmaps(:markers => {:data => @json, :options => { :do_clustering => false}	}) %>
       <% @guides.each do |guide| %>
           <div class="row">
             <p class="lead span12"><%= link_to guide.name, guide  %></p>
@@ -31,4 +32,6 @@
     <%= link_to 'New Guide', new_guide_path,
                 class: 'btn btn-warning btn-large' %>
 <% end %>
+
+<%= yield :scripts %>
 

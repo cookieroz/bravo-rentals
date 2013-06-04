@@ -5,6 +5,11 @@ class GuidesController < ApplicationController
   def index
     @guides = Guide.all
 
+    @json = @guides.first.destination.to_gmaps4rails do |guide, marker|
+      marker.infowindow render_to_string(:partial => "/guides/infowindow",
+                                         :locals => { :guide => guide})
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @guides }
