@@ -21,7 +21,7 @@ class RentalsController < ApplicationController
     @rentals = @rentals.where("bedrooms > ?", params[:bedrooms_gt]) if params[:bedrooms_gt].present?
     @rentals = @rentals.joins(:features).where("features.id" => params[:feature_ids]) if params[:feature_ids].present?
 
-    @rentals = @rentals.all
+    @rentals = @rentals.scoped.order("RANDOM()")
 
     @rentals_no_filter = Rental.all
 

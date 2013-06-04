@@ -596,9 +596,20 @@ header {
       }
     }
   }
-}
-.destination-form-photo {
-
+  .map_container {
+    border: none;
+    clear: both;
+    height: 300px;
+    margin: 15px 0 15px 0;
+    padding: 0;
+    width: 780px;
+    #map {
+      .gmaps4rails_map {
+        height: 400px;
+        width: 780px;
+      }
+    }
+  }
 }
 
 
@@ -1258,4 +1269,25 @@ footer {
   background: transparent image-url('right-shadow.png') repeat-y right top;
   margin: 0 auto;
   width: 1030px;
+}
+
+/* Map Info Window */
+.map-image {
+  .lead {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+  p {
+    font-size: 12px;
+    line-height: 13px;
+  }
+  img {
+    float: left;
+    height: auto;
+    margin-right: 5px;
+    width: 100px;
+  }
 }

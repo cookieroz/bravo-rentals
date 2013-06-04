@@ -1,5 +1,10 @@
-<p class="lead"><%= link_to rental.name, rental %></p>
-<p>
-  Sleeps: <%= rental.sleeps %> <br>
-  Bedrooms: <%= rental.sleeps %>
-</p>
+<div class="map-image">
+  <% unless rental.photos.first.nil? %>
+      <%= link_to image_tag(rental.photos.first.url), rental %>
+  <% end %>
+  <p class="lead"><%= link_to rental.name, rental %></p>
+  <p>
+    Sleeps: <%= rental.sleeps %> <br>
+    Bedrooms: <%= rental.sleeps %>
+  </p>
+</div>

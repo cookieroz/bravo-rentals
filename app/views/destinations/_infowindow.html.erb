@@ -1,0 +1,7 @@
+<div class="map-image">
+  <% unless destination.photo.nil? %>
+      <%= link_to image_tag(destination.photo.url), destination %>
+  <% end %>
+  <p class="lead"><%= link_to destination.name, destination %></p>
+  <p><%= raw truncate(strip_tags(destination.content), :length => 40) %></p>
+</div>

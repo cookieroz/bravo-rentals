@@ -25,6 +25,7 @@
       </div>
     </div>
     <div class="span10">
+      <%= gmaps(:markers => {:data => @json, :options => { :do_clustering => false}	}) %>
       <% @destinations.each do |destination| %>
           <p class="lead span10"><%= link_to destination.name, destination  %></p>
           <div class="dest-index-record-wrap">
@@ -74,3 +75,5 @@
     <%= link_to 'New Destination', new_destination_path,
                 class: 'btn btn-warning btn-large' %>
 <% end %>
+
+<%= yield :scripts %>

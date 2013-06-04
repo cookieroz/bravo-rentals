@@ -11,6 +11,11 @@ class DestinationsController < ApplicationController
       @destinations = Destination.all
     end
 
+    @json = @destinations.to_gmaps4rails do |destination, marker|
+      marker.infowindow render_to_string(:partial => "/destinations/infowindow",
+                                         :locals => { :destination => destination})
+      end
+
       respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @destinations }
