@@ -4,6 +4,7 @@ class GuidesController < ApplicationController
   # GET /guides.json
   def index
     @guides = Guide.all
+    @message = Message.new
 
     @json = @guides.first.destination.to_gmaps4rails do |guide, marker|
       marker.infowindow render_to_string(:partial => "/guides/infowindow",

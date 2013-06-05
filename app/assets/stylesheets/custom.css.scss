@@ -869,6 +869,12 @@ header {
 
 /* Guides Styles */
 .guide-index {
+  a {
+    color: $bvrBlue;
+  }
+  .lead {
+    color: $bvrYellow;
+  }
   .map_container {
     border: none;
     clear: both;
@@ -880,6 +886,23 @@ header {
       .gmaps4rails_map {
         height: 400px;
         width: 940px;
+      }
+    }
+  }
+  .guide-sug {
+    background: #ccc;
+    form {
+      margin: 0 auto;
+      padding: 10px;
+      text-align: center;
+      h3 {
+        color: #2f4f4f;
+        font-weight: lighter;
+        margin-top: 0;
+        text-decoration: underline;
+      }
+      label {
+        text-align: left;
       }
     }
   }
